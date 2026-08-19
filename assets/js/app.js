@@ -41,12 +41,24 @@
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]; }); }
   function cat(key) { for (var i = 0; i < S.categories.length; i++) if (S.categories[i].key === key) return S.categories[i]; return { ko: key, en: key }; }
   function catName(key) { var c = cat(key); return lang === "en" ? c.en : c.ko; }
-  function img(w, name) { return "/images/works/" + name; }
+  function resolve(p) { return (window.RESOLVE_ASSET ? window.RESOLVE_ASSET(p) : p); }
+  function img(w, name) { return resolve("/images/works/" + name); }
   function bodyOf(w) { return (lang === "en" && w.bodyEn && w.bodyEn.length) ? w.bodyEn : w.body; }
 
   /* ---------- 라우팅 ---------- */
+  /* 해시 모드: 서버 설정 없이 어디서나 동작 (단일 파일 배포 · file:// 열기) */
+  var HASH = window.USE_HASH_ROUTING === true || location.protocol === "file:";
+  var muteHash = false;
+
+  function currentPath() {
+    if (!HASH) return location.pathname;
+    return location.hash.replace(/^#/, "") || "/";
+  }
   function go(path, push) {
-    if (push !== false) history.pushState({}, "", path);
+    if (push !== false) {
+      if (HASH) { muteHash = true; location.hash = path; }
+      else history.pushState({}, "", path);
+    }
     render(path);
     window.scrollTo(0, 0);
     closeMenu();
@@ -57,7 +69,11 @@
     if (e.metaKey || e.ctrlKey || e.shiftKey || a.target === "_blank") return;
     e.preventDefault(); go(a.getAttribute("href"));
   });
-  window.addEventListener("popstate", function () { render(location.pathname); });
+  window.addEventListener("popstate", function () { render(currentPath()); });
+  window.addEventListener("hashchange", function () {
+    if (muteHash) { muteHash = false; return; }
+    render(currentPath());
+  });
 
   function render(path) {
     var p = path.replace(/\/+$/, "") || "/";
@@ -102,7 +118,7 @@
       '<p class="hero-scroll">scroll</p>' +
       '</section>' +
       '<div class="strip">' + picks.map(function (f, i) {
-        return '<a href="/work/' + links[i] + '" data-link><span class="r"><img src="/images/works/' + f + '" alt="" loading="lazy"></span></a>';
+        return '<a href="/work/' + links[i] + '" data-link><span class="r"><img src="' + resolve('/images/works/' + f) + '" alt="" loading="lazy"></span></a>';
       }).join("") + '</div>' +
       '<section class="home-sec">' +
       '<h2>' + esc(t("selected")) + '</h2>' +
@@ -185,7 +201,7 @@
       '<h1 class="about-motto">' + esc(L(S.motto)) + '</h1>' +
       '<div class="about-body">' + S.about.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") + '</div>' +
       '</div><aside class="about-side">' +
-      '<img class="portrait" src="/images/site/portrait.jpg" alt="' + esc(L(S.name)) + '">' +
+      '<img class="portrait" src="' + resolve("/images/site/portrait.jpg") + '" alt="' + esc(L(S.name)) + '">' +
       '<div class="cv">' + S.cv.map(function (sec) {
         return '<h3>' + esc(L(sec.heading)) + '</h3>' + sec.items.map(function (it) {
           return '<div class="item"><span class="yr">' + esc(it[0]) + '</span><span>' + esc(lang === "en" ? (it[2] || it[1]) : it[1]) + '</span></div>';
@@ -211,7 +227,7 @@
     return '<div class="page">' +
       '<p class="eyebrow"><span><a href="/writing" data-link>&larr; ' + esc(t("writing")) + '</a></span><span>' + esc(o.kind || "") + '</span></p>' +
       '<article class="article"><p class="d">' + esc(o.date) + '</p><h1>' + esc(o.title) + '</h1>' +
-      (o.image ? '<figure class="fig"><img src="' + esc(o.image) + '" alt=""></figure>' : "") +
+      (o.image ? '<figure class="fig"><img src="' + esc(resolve(o.image)) + '" alt=""></figure>' : "") +
       o.body.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") +
       '</article></div>';
   }
@@ -223,7 +239,7 @@
       '<p class="eyebrow"><span>' + esc(t("archive")) + '</span><span>' + esc(t("archiveLead")) + '</span></p>' +
       '<div class="arch-grid">' + ARCHIVE.map(function (a) {
         return '<article class="arch">' +
-          (a.src ? '<figure class="frame" data-full="' + esc(a.src) + '"><img src="' + esc(a.src) + '" alt="" loading="lazy"></figure>' : "") +
+          (a.src ? '<figure class="frame" data-full="' + esc(resolve(a.src)) + '"><img src="' + esc(resolve(a.src)) + '" alt="" loading="lazy"></figure>' : "") +
           '<p class="k">' + esc(T[lang].kinds[a.kind] || a.kind || "") + '</p>' +
           '<h3>' + esc(a.title) + '</h3>' +
           (a.note ? '<p>' + esc(a.note) + '</p>' : "") +
@@ -305,9 +321,9 @@
   document.getElementById("langBtn").addEventListener("click", function () {
     lang = lang === "ko" ? "en" : "ko";
     localStorage.setItem("yb-lang", lang);
-    applyNavLang(); buildSub(); render(location.pathname);
+    applyNavLang(); buildSub(); render(currentPath());
   });
 
   document.getElementById("yr").textContent = new Date().getFullYear();
-  buildSub(); applyNavLang(); render(location.pathname);
+  buildSub(); applyNavLang(); render(currentPath());
 })();
