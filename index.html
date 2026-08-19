@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>신예빈 · YEA BIN SHIN</title>
+<meta name="description" content="신예빈 포트폴리오 — 디자인, 순수미술, 프로젝트, 전시, 그리고 개인 아카이브.">
+<meta property="og:title" content="신예빈 · YEA BIN SHIN">
+<meta property="og:description" content="언어가 다다르지 못한 자리에, 이미지를 둡니다.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="/images/works/p51.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='25' x='4' font-size='24' font-family='Georgia,serif' font-style='italic'>y</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;1,400&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+
+<header class="side">
+  <div class="side-in">
+    <a class="brand" href="/" data-link>
+      <span class="brand-sig">Yea Bin Shin</span>
+      <span class="brand-ko">신예빈</span>
+    </a>
+
+    <nav class="nav" aria-label="주요 메뉴">
+      <a href="/about" data-link data-nav="about"><i>소개</i><em>About</em></a>
+      <div class="nav-group">
+        <a href="/works" data-link data-nav="works"><i>작업</i><em>Works</em></a>
+        <div class="nav-sub" id="navSub"></div>
+      </div>
+      <a href="/writing" data-link data-nav="writing"><i>글</i><em>Writing</em></a>
+      <a href="/archive" data-link data-nav="archive"><i>아카이브</i><em>Archive</em></a>
+      <a href="/contact" data-link data-nav="contact"><i>연락</i><em>Contact</em></a>
+    </nav>
+
+    <button class="lang" id="langBtn" type="button" aria-label="언어 전환">
+      <span data-lang="ko">KO</span><span class="slash">/</span><span data-lang="en">EN</span>
+    </button>
+
+    <p class="side-foot">© <span id="yr"></span> Yea Bin Shin</p>
+  </div>
+</header>
+
+<button class="burger" id="burger" type="button" aria-label="메뉴 열기" aria-expanded="false">
+  <span></span><span></span>
+</button>
+
+<main id="main" class="main"></main>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lb-close" type="button" aria-label="닫기">✕</button>
+  <img alt="">
+</div>
+
+<script src="/content/site.js"></script>
+<script src="/content/works.js"></script>
+<script src="/content/works.en.js"></script>
+<script src="/content/writings.js"></script>
+<script src="/content/archive.js"></script>
+<script src="/assets/js/app.js"></script>
+</body>
+</html>
