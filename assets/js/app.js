@@ -93,7 +93,8 @@
     else if (seg[0] === "admin") html = window.Admin ? window.Admin.view() : "";
     else html = '<div class="page"><p class="empty">' + t("notFound") + ' <a href="/" data-link>&larr; Home</a></p></div>';
 
-    if (stageTimer) { clearInterval(stageTimer); stageTimer = null; }
+    if (stageTimer && stageTimer.stop) { stageTimer.stop(); }
+    stageTimer = null;
     main.innerHTML = html;
     markNav(seg[0] || "home", seg[1] || "");
     reveal();
@@ -113,29 +114,35 @@
   }
   function find(slug) { return WORKS_().filter(function (w) { return w.slug === slug; })[0]; }
 
-  /* ---------- 홈: 이미지 스테이지 ---------- */
-  var STAGE = ["archive-as-form", "moment", "remains-card", "garamond", "my-garden", "ordinary-human"];
+  /* ---------- 홈: 흩어진 콜라주 ---------- */
+  var COLLAGE = ["garamond", "moment", "archive-as-form", "remains-card", "my-garden", "ordinary-human"];
+  var DEPTH = [14, -22, 10, -16, 20, -26];   /* 마우스 패럴랙스 깊이 */
   var stageTimer = null;
 
   function viewHome() {
-    var picks = STAGE.map(find).filter(Boolean);
+    var picks = COLLAGE.map(find).filter(Boolean);
+    var words = ["감정의 흔적", "printmaking", "언어 너머", "editorial", "잔류", "graphic design",
+                 "손의 궤적", "artist book", "아카이브"];
     return '<div class="page">' +
-      '<section class="stage" id="stage">' +
+      '<section class="collage" id="collage"><div class="cl-stage" id="clStage">' +
       picks.map(function (w, i) {
-        return '<div class="stage-layer' + (i === 0 ? ' on' : '') + '" data-i="' + i + '">' +
-          '<img src="' + img(w, w.cover || w.images[0]) + '" alt="" ' + (i ? 'loading="lazy"' : '') + '></div>';
-      }).join("") +
-      '<div class="stage-in">' +
-      '<div class="stage-top">' +
-      '<p class="stage-name">' + esc(S.name.en) + '<b>' + esc(S.name.ko) + '</b></p>' +
-      '<p class="stage-role">' + esc(L(S.role)) + '</p>' +
-      '</div>' +
-      '<div class="stage-bot">' +
-      '<p class="stage-motto">' + esc(L(S.motto)) + '</p>' +
-      '<p class="stage-now" id="stageNow"></p>' +
-      '</div></div>' +
-      '<div class="stage-bar"><i id="stageBar"></i></div>' +
-      '</section>' +
+        return '<a class="cl-fig cl-' + (i + 1) + '" href="/work/' + w.slug + '" data-link data-d="' + DEPTH[i] + '">' +
+          '<img src="' + img(w, w.cover || w.images[0]) + '" alt="' + esc(L(w.title)) + '" ' + (i > 1 ? 'loading="lazy"' : '') + '>' +
+          '<span class="cl-cap">' + esc(w.title.ko) + ' — ' + esc(w.year) + '</span></a>';
+      }).join("") + '</div>' +
+      '<div class="cl-meta">' +
+      '<h1 class="cl-name">' + esc(S.name.en.toLowerCase()) + '<small>' + esc(S.name.ko) + '</small></h1>' +
+      '<p class="cl-idx">' + WORKS_().length + ' works<br>' + S.categories.length + ' categories</p>' +
+      '<p class="cl-motto">' + esc(L(S.motto)) + '</p>' +
+      '<p class="cl-role">' + esc(L(S.role)) + '</p>' +
+      '</div></section>' +
+
+      '<div class="marquee"><div>' +
+      [0, 1].map(function () {
+        return words.map(function (w, i) {
+          return '<span>' + esc(w) + (i % 3 === 1 ? ' <i>◦</i>' : ' ·') + '</span>';
+        }).join("");
+      }).join("") + '</div></div>' +
 
       '<section class="home-sec">' +
       '<div class="sec-head"><h2>' + esc(t("selected")) + '</h2><span>' + WORKS_().length + ' works</span></div>' +
@@ -152,30 +159,36 @@
   }
 
   function startStage() {
-    var layers = [].slice.call(document.querySelectorAll('.stage-layer'));
-    var now = document.getElementById('stageNow');
-    var bar = document.getElementById('stageBar');
-    if (!layers.length) return;
-    var i = 0;
-    function label(k) {
-      var w = find(STAGE[k]); if (!w || !now) return;
-      now.innerHTML = '<em>' + esc(w.title.ko) + '</em>' + esc(w.year) + ' &nbsp;·&nbsp; ' + esc(catName(w.category));
+    var figs = [].slice.call(document.querySelectorAll('.cl-fig'));
+    if (!figs.length) return;
+    /* 순차 등장 */
+    figs.forEach(function (f, i) {
+      setTimeout(function () {
+        f.classList.add('in');
+        /* 등장이 끝나면 transform 트랜지션을 떼어내 패럴랙스가 끌리지 않게 */
+        setTimeout(function () { f.classList.add('ready'); }, 1200);
+      }, 120 + i * 130);
+    });
+    /* 마우스 패럴랙스 (데스크톱, 모션 축소 설정이면 생략) */
+    var box = document.getElementById('collage');
+    if (!box || window.matchMedia('(pointer:coarse)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var tx = 0, ty = 0, cx = 0, cy = 0, raf = null;
+    function loop() {
+      cx += (tx - cx) * .06; cy += (ty - cy) * .06;
+      figs.forEach(function (f) {
+        var d = +f.dataset.d || 0;
+        f.style.transform = 'translate3d(' + (cx * d / 100) + 'px,' + (cy * d / 100) + 'px,0)';
+      });
+      raf = requestAnimationFrame(loop);
     }
-    var z = 1;
-    function tick() {
-      var prev = i;
-      i = (i + 1) % layers.length;
-      layers[i].style.zIndex = ++z;      /* 새 이미지를 위에 얹고 */
-      layers[i].classList.add('on');
-      label(i);
-      if (bar) { bar.classList.remove('run'); void bar.offsetWidth; bar.classList.add('run'); }
-      setTimeout(function () {           /* 페이드가 끝난 뒤에 이전 것을 내림 */
-        layers[prev].classList.remove('on');
-      }, 1700);
-    }
-    label(0);
-    if (bar) { bar.classList.add('run'); }
-    stageTimer = setInterval(tick, 5200);
+    box.addEventListener('mousemove', function (e) {
+      var r = box.getBoundingClientRect();
+      tx = (e.clientX - r.left - r.width / 2); ty = (e.clientY - r.top - r.height / 2);
+      if (!raf) loop();
+    });
+    box.addEventListener('mouseleave', function () { tx = 0; ty = 0; });
+    stageTimer = { stop: function () { if (raf) cancelAnimationFrame(raf); } };
   }
 
   /* ---------- 작업 목록 ---------- */
