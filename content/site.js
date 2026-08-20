@@ -2,7 +2,7 @@
 
 window.SITE = {
   name: { ko: "신예빈", en: "YEA BIN SHIN" },
-  role: { ko: "홍익대학교 판화과 · 시각디자인 부전공", en: "Printmaking, Hongik University · Minor in Visual Communication Design" },
+  role: { ko: "홍익대학교 판화과 · 시각디자인과 복수전공", en: "Hongik University · B.F.A. Candidate in Printmaking and Visual Communication Design" },
 
   /* 첫 화면과 소개 페이지 맨 위에 크게 놓이는 모토 */
   motto: {
@@ -36,7 +36,7 @@ window.SITE = {
     {
       heading: { ko: "학력", en: "Education" },
       items: [
-        ["2026", "홍익대학교 판화과 3학년 재학 · 시각디자인과 부전공", "Hongik University, B.F.A. Candidate in Printmaking (Junior), Minor in Visual Communication Design"]
+        ["2026", "홍익대학교 판화과 · 시각디자인과 복수전공 재학", "Hongik University, B.F.A. Candidate in Printmaking and Visual Communication Design (double major)"]
       ]
     },
     {
