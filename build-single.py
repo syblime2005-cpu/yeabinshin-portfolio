@@ -43,8 +43,14 @@ js = "\n".join(read(f) for f in (
 
 manifest = ",\n".join('%s:"%s"' % (repr(k).replace("'", '"'), v) for k, v in assets.items())
 
-out = f"""<title>Yea Bin Shin</title>
+out = f"""<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yea Bin Shin</title>
 <meta name="description" content="신예빈 포트폴리오 — 디자인, 순수미술, 프로젝트, 전시, 그리고 개인 아카이브.">
+<meta property="og:title" content="신예빈 · YEA BIN SHIN">
+<meta property="og:description" content="언어가 다다르지 못한 자리에, 이미지를 둡니다.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='25' x='4' font-size='24' font-family='Georgia,serif' font-style='italic'>y</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 {head_extra}
