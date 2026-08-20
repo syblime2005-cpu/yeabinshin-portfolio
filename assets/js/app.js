@@ -4,7 +4,10 @@
 (function () {
   "use strict";
 
-  var S = window.SITE, WORKS = window.WORKS || [], WRITINGS = window.WRITINGS || [], ARCHIVE = window.ARCHIVE || [];
+  var S = window.SITE;
+  function WORKS_(){ return window.WORKS || []; }
+  function WRITINGS_(){ return window.WRITINGS || []; }
+  function ARCHIVE_(){ return window.ARCHIVE || []; }
   var main = document.getElementById("main");
   var lang = localStorage.getItem("yb-lang") === "en" ? "en" : "ko";
 
@@ -87,11 +90,15 @@
     else if (seg[0] === "writing") html = viewWriting();
     else if (seg[0] === "archive") html = viewArchive();
     else if (seg[0] === "contact") html = viewContact();
+    else if (seg[0] === "admin") html = window.Admin ? window.Admin.view() : "";
     else html = '<div class="page"><p class="empty">' + t("notFound") + ' <a href="/" data-link>&larr; Home</a></p></div>';
 
+    if (stageTimer) { clearInterval(stageTimer); stageTimer = null; }
     main.innerHTML = html;
     markNav(seg[0] || "home", seg[1] || "");
     reveal();
+    if (p === "/") startStage();
+    if (seg[0] === "admin" && window.Admin) window.Admin.bind();
     var base = lang === "en" ? "Yea Bin Shin" : "신예빈";
     var tt = titleFor(seg);
     document.title = (tt && tt !== base) ? tt + " · " + base : base + " · " + (lang === "en" ? "Portfolio" : "포트폴리오");
@@ -100,37 +107,75 @@
   function titleFor(seg) {
     if (!seg[0]) return lang === "en" ? "Yea Bin Shin" : "신예빈";
     if (seg[0] === "work") { var w = find(seg[1]); return w ? L(w.title) : t("works"); }
-    if (seg[0] === "writing" && seg[1]) { var o = WRITINGS.filter(function (x) { return x.slug === seg[1]; })[0]; return o ? o.title : t("writing"); }
+    if (seg[0] === "admin") return "관리자";
+    if (seg[0] === "writing" && seg[1]) { var o = WRITINGS_().filter(function (x) { return x.slug === seg[1]; })[0]; return o ? o.title : t("writing"); }
     return t(seg[0] === "works" ? "works" : seg[0]) || "";
   }
-  function find(slug) { return WORKS.filter(function (w) { return w.slug === slug; })[0]; }
+  function find(slug) { return WORKS_().filter(function (w) { return w.slug === slug; })[0]; }
 
-  /* ---------- 홈 ---------- */
+  /* ---------- 홈: 이미지 스테이지 ---------- */
+  var STAGE = ["archive-as-form", "moment", "remains-card", "garamond", "my-garden", "ordinary-human"];
+  var stageTimer = null;
+
   function viewHome() {
-    var picks = ["p51.jpg", "p33.jpg", "p05.jpg"];
-    var links = ["archive-as-form", "remains-card", "garamond"];
-    var motto = esc(L(S.motto)).replace(/\n/g, "\n");
+    var picks = STAGE.map(find).filter(Boolean);
     return '<div class="page">' +
-      '<section class="hero">' +
-      '<h1 class="hero-motto">' + motto + '</h1>' +
-      '<p class="hero-tag">' + esc(L(S.tagline)) + '</p>' +
-      '<p class="hero-meta">' + esc(L(S.name)) + ' &nbsp;·&nbsp; ' + esc(L(S.role)) + '</p>' +
-      '<p class="hero-scroll">scroll</p>' +
+      '<section class="stage" id="stage">' +
+      picks.map(function (w, i) {
+        return '<div class="stage-layer' + (i === 0 ? ' on' : '') + '" data-i="' + i + '">' +
+          '<img src="' + img(w, w.cover || w.images[0]) + '" alt="" ' + (i ? 'loading="lazy"' : '') + '></div>';
+      }).join("") +
+      '<div class="stage-in">' +
+      '<div class="stage-top">' +
+      '<p class="stage-name">' + esc(S.name.en) + '<b>' + esc(S.name.ko) + '</b></p>' +
+      '<p class="stage-role">' + esc(L(S.role)) + '</p>' +
+      '</div>' +
+      '<div class="stage-bot">' +
+      '<p class="stage-motto">' + esc(L(S.motto)) + '</p>' +
+      '<p class="stage-now" id="stageNow"></p>' +
+      '</div></div>' +
+      '<div class="stage-bar"><i id="stageBar"></i></div>' +
       '</section>' +
-      '<div class="strip">' + picks.map(function (f, i) {
-        return '<a href="/work/' + links[i] + '" data-link><span class="r"><img src="' + resolve('/images/works/' + f) + '" alt="" loading="lazy"></span></a>';
-      }).join("") + '</div>' +
+
       '<section class="home-sec">' +
-      '<h2>' + esc(t("selected")) + '</h2>' +
-      '<div class="grid">' + WORKS.slice(0, 4).map(cardHTML).join("") + '</div>' +
-      '<a class="more" href="/works" data-link>' + esc(t("allWorks")) + ' &nbsp;&rarr;</a>' +
+      '<div class="sec-head"><h2>' + esc(t("selected")) + '</h2><span>' + WORKS_().length + ' works</span></div>' +
+      '<div class="grid">' + WORKS_().slice(0, 4).map(cardHTML).join("") + '</div>' +
+      '<a class="more" href="/works" data-link>' + esc(t("allWorks")) + ' &rarr;</a>' +
       '</section>' +
+
       '<section class="home-sec">' +
-      '<h2>' + esc(t("about")) + '</h2>' +
+      '<div class="sec-head"><h2>' + esc(t("about")) + '</h2><span>' + esc(t("aboutLead")) + '</span></div>' +
       '<p>' + esc(S.about[0]) + '</p>' +
-      '<a class="more" href="/about" data-link>' + esc(t("readMore")) + ' &nbsp;&rarr;</a>' +
+      '<a class="more" href="/about" data-link>' + esc(t("readMore")) + ' &rarr;</a>' +
       '</section>' +
       '</div>';
+  }
+
+  function startStage() {
+    var layers = [].slice.call(document.querySelectorAll('.stage-layer'));
+    var now = document.getElementById('stageNow');
+    var bar = document.getElementById('stageBar');
+    if (!layers.length) return;
+    var i = 0;
+    function label(k) {
+      var w = find(STAGE[k]); if (!w || !now) return;
+      now.innerHTML = '<em>' + esc(w.title.ko) + '</em>' + esc(w.year) + ' &nbsp;·&nbsp; ' + esc(catName(w.category));
+    }
+    var z = 1;
+    function tick() {
+      var prev = i;
+      i = (i + 1) % layers.length;
+      layers[i].style.zIndex = ++z;      /* 새 이미지를 위에 얹고 */
+      layers[i].classList.add('on');
+      label(i);
+      if (bar) { bar.classList.remove('run'); void bar.offsetWidth; bar.classList.add('run'); }
+      setTimeout(function () {           /* 페이드가 끝난 뒤에 이전 것을 내림 */
+        layers[prev].classList.remove('on');
+      }, 1700);
+    }
+    label(0);
+    if (bar) { bar.classList.add('run'); }
+    stageTimer = setInterval(tick, 5200);
   }
 
   /* ---------- 작업 목록 ---------- */
@@ -144,9 +189,9 @@
   }
 
   function viewWorks(c) {
-    var list = c ? WORKS.filter(function (w) { return w.category === c; }) : WORKS;
-    var btns = [{ key: "", label: t("all"), n: WORKS.length }].concat(S.categories.map(function (x) {
-      return { key: x.key, label: lang === "en" ? x.en : x.ko, n: WORKS.filter(function (w) { return w.category === x.key; }).length };
+    var list = c ? WORKS_().filter(function (w) { return w.category === c; }) : WORKS;
+    var btns = [{ key: "", label: t("all"), n: WORKS_().length }].concat(S.categories.map(function (x) {
+      return { key: x.key, label: lang === "en" ? x.en : x.ko, n: WORKS_().filter(function (w) { return w.category === x.key; }).length };
     }));
     return '<div class="page">' +
       '<p class="eyebrow"><span>' + esc(t("works")) + '</span><span>' + esc(t("index")) + '</span></p>' +
@@ -161,7 +206,7 @@
   /* ---------- 작업 상세 ---------- */
   function viewWork(slug) {
     var w = find(slug); if (!w) return '<div class="page"><p class="empty">' + t("notFound") + '</p></div>';
-    var same = WORKS.filter(function (x) { return x.category === w.category; });
+    var same = WORKS_().filter(function (x) { return x.category === w.category; });
     var i = same.indexOf(w), prev = same[i - 1], next = same[i + 1];
 
     return '<div class="page">' +
@@ -211,10 +256,10 @@
 
   /* ---------- 글 ---------- */
   function viewWriting() {
-    if (!WRITINGS.length) return '<div class="page"><p class="eyebrow"><span>' + esc(t("writing")) + '</span></p><p class="empty">' + t("noPost") + '</p></div>';
+    if (!WRITINGS_().length) return '<div class="page"><p class="eyebrow"><span>' + esc(t("writing")) + '</span></p><p class="empty">' + t("noPost") + '</p></div>';
     return '<div class="page">' +
       '<p class="eyebrow"><span>' + esc(t("writing")) + '</span><span>' + esc(t("writingLead")) + '</span></p>' +
-      '<div class="posts">' + WRITINGS.map(function (o) {
+      '<div class="posts">' + WRITINGS_().map(function (o) {
         return '<a class="post-row" href="/writing/' + o.slug + '" data-link>' +
           '<span class="d">' + esc(o.date) + '</span>' +
           '<span><h3>' + esc(o.title) + '</h3>' + (o.lead ? '<p class="lead">' + esc(o.lead) + '</p>' : "") + '</span>' +
@@ -222,7 +267,7 @@
       }).join("") + '</div></div>';
   }
   function viewPost(slug) {
-    var o = WRITINGS.filter(function (x) { return x.slug === slug; })[0];
+    var o = WRITINGS_().filter(function (x) { return x.slug === slug; })[0];
     if (!o) return '<div class="page"><p class="empty">' + t("notFound") + '</p></div>';
     return '<div class="page">' +
       '<p class="eyebrow"><span><a href="/writing" data-link>&larr; ' + esc(t("writing")) + '</a></span><span>' + esc(o.kind || "") + '</span></p>' +
@@ -234,10 +279,10 @@
 
   /* ---------- 아카이브 ---------- */
   function viewArchive() {
-    if (!ARCHIVE.length) return '<div class="page"><p class="eyebrow"><span>' + esc(t("archive")) + '</span></p><p class="empty">' + t("noArch") + '</p></div>';
+    if (!ARCHIVE_().length) return '<div class="page"><p class="eyebrow"><span>' + esc(t("archive")) + '</span></p><p class="empty">' + t("noArch") + '</p></div>';
     return '<div class="page">' +
       '<p class="eyebrow"><span>' + esc(t("archive")) + '</span><span>' + esc(t("archiveLead")) + '</span></p>' +
-      '<div class="arch-grid">' + ARCHIVE.map(function (a) {
+      '<div class="arch-grid">' + ARCHIVE_().map(function (a) {
         return '<article class="arch">' +
           (a.src ? '<figure class="frame" data-full="' + esc(resolve(a.src)) + '"><img src="' + esc(resolve(a.src)) + '" alt="" loading="lazy"></figure>' : "") +
           '<p class="k">' + esc(T[lang].kinds[a.kind] || a.kind || "") + '</p>' +
@@ -298,6 +343,21 @@
       if (el.complete) { el.classList.add("in"); } else { el.addEventListener("load", function () { el.classList.add("in"); }); }
       io.observe(el);
     });
+    var cio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.style.transitionDelay = (Math.min(+e.target.dataset.n || 0, 5) * 70) + "ms";
+        e.target.classList.add("up");
+        cio.unobserve(e.target);
+      });
+    }, { rootMargin: "40px" });
+    var items = document.querySelectorAll(".card, .arch, .post-row");
+    if (items.length) main.classList.add("reveal");
+    items.forEach(function (el, n) { el.dataset.n = n % 6; cio.observe(el); });
+    /* 안전장치: 관찰이 어떤 이유로든 발동하지 않아도 내용이 숨겨진 채 남지 않도록 */
+    setTimeout(function () {
+      items.forEach(function (el) { el.classList.add("up"); });
+    }, 1400);
   }
 
   /* ---------- 라이트박스 ---------- */
@@ -326,4 +386,11 @@
 
   document.getElementById("yr").textContent = new Date().getFullYear();
   buildSub(); applyNavLang(); render(currentPath());
+
+  /* 저장된 내용이 있으면 불러와 덮어쓰고 다시 그림. 실패하면 기본 내용 그대로 */
+  if (window.Store && window.Store.on()) {
+    window.Store.readAll().then(function (remote) {
+      if (window.Store.apply(remote)) { S = window.SITE; render(currentPath()); }
+    }).catch(function () {});
+  }
 })();

@@ -38,8 +38,9 @@ body = html.split("<body>", 1)[1].split("</body>", 1)[0]
 body = re.sub(r'<script src="[^"]+"></script>\s*', "", body)
 
 js = "\n".join(read(f) for f in (
-    "content/site.js", "content/works.js", "content/works.en.js",
-    "content/writings.js", "content/archive.js", "assets/js/app.js"))
+    "content/config.js", "content/site.js", "content/works.js", "content/works.en.js",
+    "content/writings.js", "content/archive.js",
+    "assets/js/store.js", "assets/js/admin.js", "assets/js/app.js"))
 
 manifest = ",\n".join('%s:"%s"' % (repr(k).replace("'", '"'), v) for k, v in assets.items())
 
