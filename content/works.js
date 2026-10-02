@@ -92,8 +92,31 @@ window.WORKS = [
     role: { ko: "영상 (1) 수업 · 브랜드 로고 영상 제작", en: "Motion Graphics I · Brand logo film" },
     caption: { ko: "2026, 2D 모션 그래픽, 싱글채널 비디오, 00’21”", en: "2026, 2D motion graphics, single-channel video, 00’21”" },
     link: { label: "Vimeo", url: "https://vimeo.com/1209280728" },
-    cover: "p17.jpg",
-    images: ["p17.jpg", "p18.jpg", "p19.jpg"],
+    cover: "kbp-cover.jpg",
+    video: "kitty-bunny-pony.mp4",
+    videoPoster: "kbp-cover.jpg",
+    videoNote: { ko: "브랜드 로고 필름 · 21초", en: "Brand logo film · 21 s" },
+    images: ["p18.jpg"],
+    processNote: {
+      ko: "기획안 원본 (한국어)",
+      en: "Planning deck, in the original Korean"
+    },
+    process: [
+      { src: "kbp-01.jpg", ko: "기획안 표지 — 영상 (1) 과제 P4", en: "Deck cover — Motion Graphics I, Project 4" },
+      { src: "kbp-02.jpg", ko: "목차: 브랜드 개요 · 분석 · 경쟁사 · 포지셔닝 · 스토리보드 · 타임코드", en: "Contents: brand overview, analysis, competitors, positioning, storyboard, timecode" },
+      { src: "kbp-03.jpg", ko: "브랜드 개요 — 2008년 런칭한 디자인 패브릭 브랜드 KBP", en: "Brand overview — KBP, a design fabric label launched in 2008" },
+      { src: "kbp-04.jpg", ko: "브랜드 철학 ‘Life in Patterns’ — 패턴을 일상에서 향유한다", en: "The brand premise, ‘Life in Patterns’ — pattern as something you live with, not look at" },
+      { src: "kbp-05.jpg", ko: "시장 경쟁력 분석 (SWOT) — 자체 패턴 아카이브와 아시아 시장 확장", en: "SWOT — the in-house pattern archive and room to grow across Asia" },
+      { src: "kbp-06.jpg", ko: "경쟁사 비교 — 마리메꼬·데일리라이크·무인양품·H&M HOME 등과의 대비", en: "Competitors compared — Marimekko, Daily Like, MUJI, H&M HOME and others" },
+      { src: "kbp-07.jpg", ko: "포지셔닝 맵 — 품질 축과 가격 축 위에서 KBP 가 서는 자리", en: "Positioning map — where KBP sits on quality against price" },
+      { src: "kbp-08.jpg", ko: "‘왜 KBP 여야만 하는가’ — 유행을 타지 않는 고유 패턴 IP 를 근거로", en: "‘Why it has to be KBP’ — the argument rests on pattern IP that does not date" },
+      { src: "kbp-09.jpg", ko: "로고 해부 — 두꺼운 원 스트로크가 화려한 패턴을 하나로 응축하는 질서", en: "The logo taken apart — one thick circular stroke holding a crowd of patterns in order" },
+      { src: "kbp-10.jpg", ko: "스토리보드 — 21초를 9개 컷으로 나눔", en: "Storyboard — twenty-one seconds cut into nine shots" },
+      { src: "kbp-11.jpg", ko: "장면별 타임코드 (전반) — 인트로부터 텍스처 확장까지", en: "Timecode, first half — from the intro through the texture expansion" },
+      { src: "kbp-12.jpg", ko: "장면별 타임코드 (후반) — 테두리만 남고 로고가 완성되기까지", en: "Timecode, second half — down to the bare outline, then the logo closing" },
+      { src: "kbp-sb.jpg", ko: "손으로 그린 스토리보드. 컷마다 초 단위와 카메라 움직임을 적어둠", en: "The storyboard by hand, with seconds and camera moves written into each frame" },
+      { src: "kbp-ae.jpg", ko: "After Effects — 35개 레이어로 쌓은 최종 타임라인", en: "After Effects — the final timeline, built up across 35 layers" }
+    ],
     body: [
       "본 작업은 기존 패브릭 브랜드 키티버니포니(KBP)의 핵심 가치와 시각적 자산을 깊이 있게 분석하고, 이를 기반으로 브랜드의 정체성을 압축적으로 시각화한 로고 컨셉 필름입니다. ‘패턴을 일상에서 향유한다’는 브랜드의 미학적 본질을 스크린 위의 리듬감으로 번역해내는 기획적 당위성에 초점을 맞추었습니다.",
       "영상은 KBP 특유의 자체제작 패턴 플레이가 펼쳐지는 서사로 시작됩니다. 이후 브랜드의 성격을 보여주는 직조, 패턴, 일상을 보이는 사진들이 나오다가 중심부의 ‘두꺼운 원 스트로크’ 안으로 강력하게 응축되는 질서를 모션 그래픽으로 구현했습니다.",
@@ -252,7 +275,7 @@ window.WORKS = [
     },
     cover: "pc-cover.jpg",
     images: [],
-    spreads: ["pc-m1.jpg", "pc-m3.jpg", "pc-m4.jpg", "pc-m5.jpg", "pc-m6.jpg", "pc-m2.jpg"],
+    spreads: ["pc-m1.jpg", "pc-m3.jpg", "pc-m4.jpg", "pc-m5.jpg", "pc-m6.jpg", "pc-m2.jpg", "pc-m7.jpg", "pc-m8.jpg"],
     process: [
       { src: "pc-02.jpg", ko: "Notion — 멤버별 리서치 보드. 각자 조사한 자료가 원고의 출발점", en: "Notion — research board; each member's findings started the writing" },
       { src: "pc-01.jpg", ko: "Notion — 주 단위 작업 기록 (2025.7 – 10)", en: "Notion — weekly production log, Jul – Oct 2025" },
