@@ -4,6 +4,12 @@
    ============================================================= */
 (function () {
   var EN = {
+    "antifreeze": [
+      "A lyric film set to 〈Antifreeze〉 by The Black Skirts. It began from reading the song as antifreeze — a liquid that holds the memory of your warmest season and keeps it from freezing. Everyone passes through an ice age of boredom and loss at some point; what carries you through it, I think, is one pure moment from the past that never expires.",
+      "The theme became an exchange diary pulled out of frozen time. Working from the line “we were always going to end up this way”, I wanted the clumsy, pressed-in handwriting and drawings of an old exchange diary to carry a warmth from the past that everyone recognises.",
+      "Three keywords hold the screen together. Vintage: a slightly tacky, warm grain that drags memory back with it. Analogue lettering: the kind of type that would plausibly be sitting inside a school exchange diary. Collage: images and photographic texture that look torn, cut, and stuck down by hand, so the whole thing reads as a childhood memory.",
+      "The whole thing was cut into thirteen shots, with every lyric line timed in and out to the frame."
+    ],
     "garamond": [
       "A study of the Garamond typeface and the making of a type specimen book, produced for a typography course. It begins from the fact that this letterform originated not in mechanical drafting but in the trajectory of a human hand holding a pen.",
       "Every letter, numeral and punctuation mark was set out one by one on graph paper so the structure could be taken apart against grid and proportion. I traced how printing technology and writing tools of the Renaissance shaped the letters, down to the subtle curves and stroke contrasts introduced to correct optical illusion.",

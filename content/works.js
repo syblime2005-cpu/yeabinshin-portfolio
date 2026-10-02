@@ -82,6 +82,48 @@ window.WORKS = [
     ]
   },
   {
+    slug: "antifreeze",
+    tools: "After Effects · Premiere Pro · Photoshop",
+    audience: {
+      ko: "한 시절을 지나보내고 그 온도를 아직 기억하는 사람",
+      en: "Anyone who has come out the far side of a season and still remembers how warm it was"
+    },
+    concept: {
+      ko: "노래를 ‘가장 뜨거웠던 시절의 기억을 얼지 않게 붙드는 부동액’으로 읽었습니다. 권태와 상실이라는 빙하기 위에 교환일기장을 펼쳐두고, 손으로 쓴 글씨와 종이를 찢어 붙인 콜라주로 그 온도를 다시 꺼내 보이려 했습니다.",
+      en: "I read the song as antifreeze — something that keeps the memory of your warmest season from freezing over. Over an ice age of boredom and loss, an exchange diary lies open; handwriting and torn-paper collage bring that temperature back up."
+    },
+    category: "design",
+    year: "2026",
+    title: { ko: "Antifreeze — 가사 영상", en: "Antifreeze — Lyric Film" },
+    role: { ko: "영상 (1) 수업 · 기획, 촬영, 편집", en: "Motion Graphics I · concept, shooting, edit" },
+    caption: {
+      ko: "2026, 싱글채널 비디오, 01’15” · 검정치마 〈Antifreeze〉",
+      en: "2026, single-channel video, 01’15” · set to 〈Antifreeze〉 by The Black Skirts"
+    },
+    cover: "antifreeze-cover.jpg",
+    video: "antifreeze.mp4",
+    videoPoster: "antifreeze-cover.jpg",
+    videoNote: { ko: "가사 영상 · 1분 15초", en: "Lyric film · 1 min 15 s" },
+    images: [],
+    processNote: { ko: "기획안 원본 (한국어)", en: "Planning deck, in the original Korean" },
+    process: [
+      { src: "af-s01.jpg", ko: "기획안 표지 — 영상 (1) 과제 P3", en: "Deck cover — Motion Graphics I, Project 3" },
+      { src: "af-s02.jpg", ko: "곡과 가사 — 검정치마 〈Antifreeze〉", en: "The song and its lyrics — 〈Antifreeze〉 by The Black Skirts" },
+      { src: "af-s03.jpg", ko: "선정 이유와 주제 — ‘얼어붙은 시간 속에서 꺼낸 교환일기’", en: "Why this song, and the theme: an exchange diary pulled out of frozen time" },
+      { src: "af-s04.jpg", ko: "세 가지 키워드 — 빈티지 / 아날로그 타이포 / 콜라주", en: "Three keywords — vintage, analogue lettering, collage" },
+      { src: "af-s05.jpg", ko: "손으로 그린 스토리보드", en: "The storyboard, drawn by hand" },
+      { src: "af-s06.jpg", ko: "장면별 타임코드 1 — 00:00 부터 00:27 까지", en: "Timecode 1 — 00:00 to 00:27" },
+      { src: "af-s07.jpg", ko: "장면별 타임코드 2 — 00:27 부터 00:51 까지", en: "Timecode 2 — 00:27 to 00:51" },
+      { src: "af-s08.jpg", ko: "장면별 타임코드 3 — 00:51 부터 01:17, 마지막 컷까지", en: "Timecode 3 — 00:51 to 01:17, through to the last shot" }
+    ],
+    body: [
+      "검정치마의 〈Antifreeze〉에 붙인 가사 영상입니다. 이 노래를 ‘가장 뜨거웠던 시절의 기억’을 담은 부동액 같은 곡으로 읽는 데서 시작했습니다. 누구나 살면서 권태와 상실 같은 빙하기를 지나지만, 그 시기를 버티게 해주는 것은 결국 유효기간 없이 순수했던 과거의 한 순간이라고 보았습니다.",
+      "주제는 ‘얼어붙은 시간 속에서 꺼낸 교환일기’로 잡았습니다. “우린 오래 전부터 어쩔 수 없는 거였어”라는 가사를 매개로, 낡은 교환일기장 위에 서툴게 눌러쓴 손글씨와 일러스트를 통해 모두가 공유하는 ‘따뜻했던 과거의 온도’를 시각화하고자 했습니다.",
+      "세 가지 키워드로 화면을 묶었습니다. 빈티지는 과거의 기억을 떠올리게 하는 촌스럽고 따뜻한 질감으로, 아날로그 타이포는 교환일기장 속에 있을 법한 그 시절 타이포로, 콜라주는 종이를 찢어 손으로 오리고 붙인 듯한 이미지와 사진 질감으로 ‘어린 시절의 추억’을 드러냈습니다.",
+      "전체를 열세 개 컷으로 끊고, 가사 한 줄이 들어오고 나가는 지점을 프레임 단위로 맞췄습니다."
+    ]
+  },
+  {
     slug: "kitty-bunny-pony",
     tools: "After Effects · Illustrator · Photoshop",
     audience: { ko: "패브릭 브랜드 KBP의 기존 고객과, 패턴을 일상에서 쓰는 사람들", en: "KBP's existing customers and people who live with pattern day to day" },
