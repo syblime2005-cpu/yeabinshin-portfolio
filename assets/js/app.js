@@ -46,6 +46,8 @@
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]; }); }
   function cat(key) { for (var i = 0; i < S.categories.length; i++) if (S.categories[i].key === key) return S.categories[i]; return { ko: key, en: key }; }
   function catName(key) { var c = cat(key); return lang === "en" ? c.en : c.ko; }
+  /* 글·아카이브처럼 한 덩어리에 en 하위 객체를 둔 항목에서 언어에 맞는 값을 고른다 */
+  function P(o, k) { return (lang === "en" && o.en && o.en[k]) ? o.en[k] : o[k]; }
   function resolve(p) { return (window.RESOLVE_ASSET ? window.RESOLVE_ASSET(p) : p); }
   function img(w, name) { return resolve("/images/works/" + name); }
   function bodyOf(w) { return (lang === "en" && w.bodyEn && w.bodyEn.length) ? w.bodyEn : w.body; }
@@ -112,7 +114,7 @@
     if (!seg[0]) return lang === "en" ? "Yea Bin Shin" : "신예빈";
     if (seg[0] === "work") { var w = find(seg[1]); return w ? L(w.title) : t("works"); }
     if (seg[0] === "admin") return "관리자";
-    if (seg[0] === "writing" && seg[1]) { var o = WRITINGS_().filter(function (x) { return x.slug === seg[1]; })[0]; return o ? o.title : t("writing"); }
+    if (seg[0] === "writing" && seg[1]) { var o = WRITINGS_().filter(function (x) { return x.slug === seg[1]; })[0]; return o ? P(o, "title") : t("writing"); }
     return t(seg[0] === "works" ? "works" : seg[0]) || "";
   }
   function find(slug) { return WORKS_().filter(function (w) { return w.slug === slug; })[0]; }
@@ -131,10 +133,10 @@
       picks.map(function (w, i) {
         return '<a class="cl-fig cl-' + (i + 1) + '" href="/work/' + w.slug + '" data-link data-d="' + DEPTH[i] + '">' +
           '<img src="' + img(w, w.cover || w.images[0]) + '" alt="' + esc(L(w.title)) + '" ' + (i > 1 ? 'loading="lazy"' : '') + '>' +
-          '<span class="cl-cap">' + esc(w.title.ko) + ' — ' + esc(w.year) + '</span></a>';
+          '<span class="cl-cap">' + esc(L(w.title)) + ' — ' + esc(w.year) + '</span></a>';
       }).join("") + '</div>' +
       '<div class="cl-meta">' +
-      '<h1 class="cl-name">' + esc(S.name.en.toLowerCase()) + '<small>' + esc(S.name.ko) + '</small></h1>' +
+      '<h1 class="cl-name">' + esc(S.name.en.toLowerCase()) + (lang === "en" ? "" : '<small>' + esc(S.name.ko) + '</small>') + '</h1>' +
       '<p class="cl-idx">' + WORKS_().length + ' works<br>' + S.categories.length + ' categories</p>' +
       '<p class="cl-motto">' + esc(L(S.motto)) + '</p>' +
       '<p class="cl-role">' + esc(L(S.role)) + '</p>' +
@@ -199,7 +201,7 @@
     return '<a class="card" href="/work/' + w.slug + '" data-link>' +
       '<span class="frame">' + ((w.cover || (w.images && w.images[0])) ? '<img src="' + img(w, w.cover || w.images[0]) + '" alt="' + esc(L(w.title)) + '" loading="lazy">' : '<span class="noimg"></span>') + '</span>' +
       '<span class="meta"><span class="no">' + String((i || 0) + 1).padStart(2, "0") + '</span>' +
-      '<h3>' + esc(w.title.ko) + '<span class="en">' + esc(w.title.en) + '</span></h3></span>' +
+      '<h3>' + (lang === "en" ? esc(w.title.en) : esc(w.title.ko) + '<span class="en">' + esc(w.title.en) + '</span>') + '</h3></span>' +
       '<span class="cap">' + esc(L(w.caption)) + '</span>' +
       '</a>';
   }
@@ -230,7 +232,7 @@
       '<span><a href="/works" data-link>' + esc(t("back")) + '</a></span></p>' +
 
       '<div class="detail-head">' +
-      '<h1>' + esc(w.title.ko) + '<span class="en">' + esc(w.title.en) + '</span></h1>' +
+      '<h1>' + (lang === "en" ? esc(w.title.en) : esc(w.title.ko) + '<span class="en">' + esc(w.title.en) + '</span>') + '</h1>' +
       '<div class="detail-side">' +
       row(t("year"), esc(w.year)) +
       row(t("role"), esc(L(w.role))) +
@@ -363,18 +365,18 @@
       '<div class="posts">' + WRITINGS_().map(function (o) {
         return '<a class="post-row" href="/writing/' + o.slug + '" data-link>' +
           '<span class="d">' + esc(o.date) + '</span>' +
-          '<span><h3>' + esc(o.title) + '</h3>' + (o.lead ? '<p class="lead">' + esc(o.lead) + '</p>' : "") + '</span>' +
-          '<span class="k">' + esc(o.kind || "") + '</span></a>';
+          '<span><h3>' + esc(P(o, "title")) + '</h3>' + (P(o, "lead") ? '<p class="lead">' + esc(P(o, "lead")) + '</p>' : "") + '</span>' +
+          '<span class="k">' + esc(P(o, "kind") || "") + '</span></a>';
       }).join("") + '</div></div>';
   }
   function viewPost(slug) {
     var o = WRITINGS_().filter(function (x) { return x.slug === slug; })[0];
     if (!o) return '<div class="page"><p class="empty">' + t("notFound") + '</p></div>';
     return '<div class="page">' +
-      '<p class="eyebrow"><span><a href="/writing" data-link>&larr; ' + esc(t("writing")) + '</a></span><span>' + esc(o.kind || "") + '</span></p>' +
-      '<article class="article"><p class="d">' + esc(o.date) + '</p><h1>' + esc(o.title) + '</h1>' +
+      '<p class="eyebrow"><span><a href="/writing" data-link>&larr; ' + esc(t("writing")) + '</a></span><span>' + esc(P(o, "kind") || "") + '</span></p>' +
+      '<article class="article"><p class="d">' + esc(o.date) + '</p><h1>' + esc(P(o, "title")) + '</h1>' +
       (o.image ? '<figure class="fig"><img src="' + esc(resolve(o.image)) + '" alt=""></figure>' : "") +
-      o.body.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") +
+      P(o, "body").map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") +
       '</article></div>';
   }
 
@@ -387,8 +389,8 @@
         return '<article class="arch">' +
           (a.src ? '<figure class="frame" data-full="' + esc(resolve(a.src)) + '"><img src="' + esc(resolve(a.src)) + '" alt="" loading="lazy"></figure>' : "") +
           '<p class="k">' + esc(T[lang].kinds[a.kind] || a.kind || "") + '</p>' +
-          '<h3>' + esc(a.title) + '</h3>' +
-          (a.note ? '<p>' + esc(a.note) + '</p>' : "") +
+          '<h3>' + esc(P(a, "title")) + '</h3>' +
+          (P(a, "note") ? '<p>' + esc(P(a, "note")) + '</p>' : "") +
           (a.url ? '<a class="lnk" href="' + esc(a.url) + '" target="_blank" rel="noopener">listen / open &nearr;</a>' : "") +
           (a.date ? '<p class="dt">' + esc(a.date) + '</p>' : "") +
           '</article>';
@@ -398,12 +400,13 @@
   /* ---------- 연락 ---------- */
   function viewContact() {
     var c = S.contact;
+    function L2(o, k) { var v = o[k]; return (v && typeof v === "object") ? (v[lang] || v.ko || v.en) : v; }
     return '<div class="page"><p class="eyebrow"><span>' + esc(t("contact")) + '</span><span>' + esc(L(S.name)) + '</span></p>' +
       '<div class="contact-wrap"><h1>' + esc(L(S.motto)).replace(/\n/g, " ") + '</h1>' +
       '<div class="contact-row"><span class="k">EMAIL</span><a href="mailto:' + esc(c.email) + '">' + esc(c.email) + '</a></div>' +
-      (c.phone ? '<div class="contact-row"><span class="k">PHONE</span><span>' + esc(c.phone) + '</span></div>' : "") +
+      (L2(c, "phone") ? '<div class="contact-row"><span class="k">PHONE</span><span>' + esc(L2(c, "phone")) + '</span></div>' : "") +
       (c.instagram ? '<div class="contact-row"><span class="k">INSTAGRAM</span><a href="' + esc(c.instagram) + '" target="_blank" rel="noopener">@' + esc(c.instagram.split("/").filter(Boolean).pop()) + '</a></div>' : "") +
-      '<div class="contact-row"><span class="k">BASED IN</span><span>Seoul</span></div>' +
+      '<div class="contact-row"><span class="k">BASED IN</span><span>' + esc(L2(c, "basedIn") || "Seoul") + '</span></div>' +
       '</div></div>';
   }
 

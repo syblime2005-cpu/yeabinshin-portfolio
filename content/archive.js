@@ -14,25 +14,41 @@ window.ARCHIVE = [
     kind: "book",
     date: "2025",
     title: "윌리엄 해즐릿, 『혐오의 즐거움에 관하여』",
-    note: "혐오는 회피해야 할 감정이 아니라 살아 있음을 확인하게 하는 모순적인 감정 중 하나라는 문장. 에칭 작업과 북 디자인이 모두 여기서 출발했다."
+    note: "혐오는 회피해야 할 감정이 아니라 살아 있음을 확인하게 하는 모순적인 감정 중 하나라는 문장. 에칭 작업과 북 디자인이 모두 여기서 출발했다.",
+    en: {
+      title: "William Hazlitt, 『On the Pleasure of Hating』",
+      note: "The line that disgust is not something to be avoided but one of the contradictory feelings that prove you are alive. Both the etchings and the book design started here."
+    }
   },
   {
     kind: "book",
     date: "2025",
     title: "C.S. 루이스, 『나니아 연대기』",
-    note: "버려지는 영수증을 차원 이동 티켓으로 바꿔 본 이유. 사소한 사물도 하나의 세계관을 매개하는 서사적 물질이 될 수 있다."
+    note: "버려지는 영수증을 차원 이동 티켓으로 바꿔 본 이유. 사소한 사물도 하나의 세계관을 매개하는 서사적 물질이 될 수 있다.",
+    en: {
+      title: "C.S. Lewis, 『The Chronicles of Narnia』",
+      note: "Why a thrown-away receipt became a ticket between worlds. Even a trivial object can carry a whole world, if you let it."
+    }
   },
   {
     kind: "text",
     date: "2025",
     title: "“잠시만”",
-    note: "멈추고 숨을 고르기 위한 최소한의 여지를 만들어내는 말. 이어폰을 꽂는 순간이 나에게는 그 ‘잠시’다."
+    note: "멈추고 숨을 고르기 위한 최소한의 여지를 만들어내는 말. 이어폰을 꽂는 순간이 나에게는 그 ‘잠시’다.",
+    en: {
+      title: "“Just a moment”",
+      note: "A phrase that opens the smallest possible room to stop and catch your breath. For me that moment is the second the earphones go in."
+    }
   },
   {
     kind: "space",
     date: "2025",
     title: "판화실",
-    note: "누군가에게는 사소해 보이지만 판화인들에게는 창작의 필수적인 궤적. 흔적과 도구들을 모아 아카이브로 만들었다."
+    note: "누군가에게는 사소해 보이지만 판화인들에게는 창작의 필수적인 궤적. 흔적과 도구들을 모아 아카이브로 만들었다.",
+    en: {
+      title: "The printmaking studio",
+      note: "Trivial to most people, but to printmakers it is the necessary trace of the work. I collected those marks and tools and made them into an archive."
+    }
   }
 
   /* 여기에 새 항목을 추가하세요 ↓ (윗줄 } 뒤에 쉼표 , 를 꼭 붙이고)

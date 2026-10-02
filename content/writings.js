@@ -16,6 +16,17 @@ window.WRITINGS = [
     kind: "기획의 글",
     title: "가짜인가, 진짜인가 — PAPER COMPANY 서문",
     lead: "PP 매거진 3호를 준비하며 쓴 서문.",
+    en: {
+      kind: "Editor's note",
+      title: "Fake or Real — foreword to PAPER COMPANY",
+      lead: "Written while preparing PP Magazine Vol.3.",
+      body: [
+        "The fingertips that once made prints were called the ‘Printer’. The word that defines our own time may turn out to be AI.",
+        "Standing in front of images formed not from the materiality of things we know how to touch, but from algorithms and data, we meet strangeness and possibility in the same moment. Art, standing on yet another border, asks: is it fake or real, a tool or a maker?",
+        "We prepared this issue at the point where public argument and new technique cross each other, asking what view and what posture an artist in their twenties can reasonably hold.",
+        "The title papercompany holds that posture — looking straight at AI art, which has carried the brand of ‘fake’, while looking for what might still grow inside it."
+      ]
+    },
     image: "/images/works/p45.jpg",
     body: [
       "한때 판화를 만들던 손끝을 ‘Printer’라 불렀듯, 오늘 우리의 시대를 규정하는 단어는 AI일지 모릅니다.",
@@ -30,6 +41,16 @@ window.WRITINGS = [
     kind: "기획의 글",
     title: "장벽으로서의 BLOCK, 조건으로서의 BLOCK",
     lead: "판화 백과사전 〈BEYOND THE BLOCK〉을 기획하며.",
+    en: {
+      kind: "Editor's note",
+      title: "The block as a barrier, the block as a condition",
+      lead: "Written while planning 〈BEYOND THE BLOCK〉, a printmaking encyclopedia.",
+      body: [
+        "A heavy press, unfamiliar terms, a long process. These are the pictures that follow the word printmaking around. And next to all of them there is always a block.",
+        "The block is where printmaking begins — the surface an image is carried on. For anyone outside the field, it is also where they stop.",
+        "We wanted to move between the two: the block as a barrier, and the block as a working condition. Printmaking read not as a set of techniques but as a way of thinking. The book is open enough for anyone to enter, and it keeps asking how far that boundary can be pushed — making the question itself the ground the story is printed on."
+      ]
+    },
     image: "/images/works/p47.jpg",
     body: [
       "무거운 프레스기, 낯선 용어, 복잡한 공정. 판화를 떠올리면 자연스럽게 따라붙는 이미지들입니다. 그리고 그 옆에는 늘 BLOCK이 존재합니다.",

@@ -18,7 +18,8 @@ window.SITE = {
 
   contact: {
     email: "syblime1209@naver.com",
-    phone: "010-6346-7554",
+    phone: { ko: "010-6346-7554", en: "+1 (213) 783 6230" },
+    basedIn: { ko: "Seoul", en: "Los Angeles" },
     instagram: ""   /* 예: "https://instagram.com/아이디" — 비워두면 표시되지 않습니다 */
   },
 
