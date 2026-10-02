@@ -69,27 +69,54 @@
       "Fragments left by emotion were drawn in lithography inside a standardised card frame, holding the chaos and incompleteness of what remains.",
       "Complex psychological states that do not surface easily — from human arrogance to inner frailty — are set alternately on the front and back of the cards, so that in facing and recombining them the viewer senses the invisible trajectory of emotion in three dimensions."
     ],
+    "dd-zine": [
+      "PP's main account announces each issue. The gaps between issues were empty, so we needed a place for the smaller things art students collect day to day. I planned that account — Digital Digging — and designed its identity and content system.",
+      "The logo is the existing PP mark flipped upside down. Where the mark had columns, the inverted form reads as two points digging downward, with the upper half becoming a handle. It keeps the family resemblance to the main account while making the different function legible in the shape itself.",
+      "Content is sorted into three streams, each tied to a color: PP insight in green (#83FF83), popular culture in magenta (#FF39EF), fine art in orange (#FF4537). From a distance the grid sorts itself by color alone, and the center column holds the posts that belong to none of the three, so the feed keeps a rhythm.",
+      "The templates had to let eight people post at the same quality with wildly different text lengths. I built variants for short, medium, and long titles so writers could pick rather than improvise, and wrote the upload format and comment rules into a shared guideline.",
+      "The drafts went through several rounds of team feedback. The logo covering titles, the overall brightness balance across the grid, and centering the mark on text-only posts were all caught and fixed in that process."
+    ],
+    "pp-vol5": [
+      "Vol.5 is about conservation. It started from noticing that the word holds two different things at once — keeping the work itself alive, and collecting and storing it. To keep the issue from drifting into technical restoration, we framed it around a different question: what do we keep, why, and how.",
+      "It runs in three chapters. Physical conservation opens with ‘where is your graduation piece right now?’ and moves through interviews with classmates, seniors, and professors, and research on how long contemporary materials actually last. Archival conservation shrinks a museum's system down to the size of a student's room. The last chapter looks at preserving work that has no physical form.",
+      "My role was directing the schedule and giving feedback on the writing. From April to August I tracked progress week by week and spaced planning, drafts, visuals, mockups, and teasers so none of them blocked the next. With eight people moving at different speeds, most of the work was deciding what had to exist by when so the next person could start.",
+      "The editorial design and layout were done by other members. My side of it was setting the direction for the issue, then reading drafts and sending them back.",
+      "I also joined the planning for the web version of the magazine. We documented the development scope, domain, login permissions, and how content categories would be run, then handed that to the development team."
+    ],
+    "pp-website": [
+      "Once an issue of PP was printed, the writing in it effectively disappeared. Anyone who could not get a physical copy had no way to read it, and neither did anyone looking for a back issue. The web magazine was planned to solve that.",
+      "I worked on the stage before development rather than the build itself. I compared paid and free development scopes to decide what we could handle ourselves and what had to be handed over, and checked domain and hosting costs against the budget we had.",
+      "I also worked out the permission structure — what an administrator sees versus a reader, and how much should be readable without logging in at all. We documented that together as a team. Features like subscriptions and payments were deliberately left out of scope; they did not fit the size we are.",
+      "Rather than copying the magazine's structure straight onto the site, we rebuilt how content would be organised. Issue-by-issue grouping and category search had to work together, or older writing would stop being read again.",
+      "We handed the documentation to the development team, and the site was built from that planning."
+    ],
     "paper-company-zine": [
       "Just as the fingertips that once made prints were called ‘Printer’, the word defining our own time may be AI. Standing before images formed not from the materiality of familiar substances but from algorithms and data, we meet strangeness and possibility at once. Art, on yet another border, asks: is it fake or real, a tool or a creator?",
-      "At the moment where social debate and new technique cross, we prepared the third issue by asking what perspective and attitude an artist in their twenties can hold. The title papercompany holds an attitude: looking straight at AI art, branded ‘fake’, while searching out the threads of creation that might still flower inside it.",
-      "The magazine was presented at the 2025 Hongik Art Book Festival 〈Threading Texts〉, planned together with the members, with my part in planning and writing."
+      "At the moment where social debate and new technique cross, we prepared the third issue by asking what perspective and attitude an artist in their twenties can hold. The title papercompany holds an attitude: looking straight at AI art, branded ‘fake’, while looking for what might still grow inside it.",
+      "Vol.3 is from the stretch when I was still learning my way around PP. I was in the planning meetings, wrote for it, and did the final review before print; the editorial design was handled by other members.",
+      "We planned the issue together as a group and showed it at the 2025 Hongik Art Book Festival 〈Threading Texts〉."
     ],
     "beyond-the-block": [
-      "A heavy press, unfamiliar terms, a complicated process — the images that follow printmaking around. And beside them there is always a BLOCK. The block is printmaking’s starting point for transferring an image, but for those unfamiliar with the medium it is also a barrier of perception.",
-      "〈BEYOND THE BLOCK〉 was planned to break down the many blocks — the barriers to entry — around printmaking, for people who do not know it well or have found it difficult and strange. Moving between the block as barrier and the block as condition, we wanted to look at printmaking again not as a technique but as a way of working.",
-      "The first chapter is arranged as a dictionary, ordering terms and concepts of printmaking from ㄱ to ㅎ, covering processes, materials, tools and techniques used in the work; each entry draws on printmaking literature, Korean and international sources and specialist sites.",
-      "The second chapter is a set of interviews — with heads of printmaking groups, assistants, professors, a design professor, and people running actual print studios. Through different positions it shows how each of them looks at printmaking, the conditions they work in, and how the medium is expanding in their own fields."
+      "A heavy press, unfamiliar terms, a long process — this is what people picture when they hear printmaking. And next to all of it there is always a BLOCK. The block is where printmaking begins, the surface an image is carried on. For anyone outside the field it is also where they stop.",
+      "〈BEYOND THE BLOCK〉 was made for the people on that side of the block — anyone who found printmaking difficult or simply never had a reason to start. Holding the block as both a barrier and a working condition, we wanted printmaking read as a way of thinking rather than a set of techniques.",
+      "The first chapter is a dictionary, running A to Z through the terms and concepts of printmaking — processes, materials, tools, techniques. You can enter at one word without reading the book. Each entry was checked against printmaking literature, Korean and international sources, and specialist references.",
+      "The second chapter is a set of interviews — group leaders, teaching assistants, professors, a design professor, and people running their own print studios. The same words from the dictionary come back attached to people actually using them, which is where the medium starts to look like something that expands rather than narrows."
     ],
     "homemade-printmaking": [
-      "Planned as a supplement to the magazine, this booklet is a homemade printmaking manual that lowers the barriers around the medium and encourages artistic practice in everyday spaces. In place of heavy presses and complicated processes, it finds substitute materials and tools always at hand and proposes a printmaking process for daily use.",
-      "It was built on empirical data and production know-how that printmaking students gathered and tested through their own coursework, and its careful tutorials turn a technique-centred medium into a familiar kind of play and a form of expression one can take charge of.",
-      "A light, direct saddle-stitched format adds the flexibility to lie open and be consulted while working. Rather than confining printmaking to a single field of study, it aims to be a practical guideline helping anyone become a producer of art."
+      "A supplement to Vol.4: a manual for making prints at home. Instead of a heavy press and a long process, it builds a working method out of substitutes — materials and tools that are already around, or easy to order.",
+      "Everything in it was tested by printmaking students in their own coursework first, so the tutorials come from what actually worked rather than from theory. The aim was to move printmaking from something you need permission and equipment for to something you can simply try.",
+      "It is saddle-stitched for one reason: it has to stay open on a desk while your hands are busy. The point was never to keep printmaking inside one department, but to make it something anyone could produce."
     ],
     "archive-as-form": [
       "This work departs from the double nature of the archive — preservation and concealment — and explores the form of a ‘living archive’ that holds the layers of process rather than result-centred records.",
       "The floppy disk, the principal object, stores data without revealing its substance; this resembles the structure of printmaking, which carries the traces of countless actions yet finally presents only a surface on paper. A record comes into being precisely in the gap between an unseen interior and a disclosed exterior.",
       "To extend this printmaking logic I reconstructed the form of the archive through the translucent, pliant materiality of silicone. Floppy disks arranged like a bookshelf, and the translucent layers wrapping them, are a metaphor for traces that endlessly overlap and vary.",
-      "〈Trace〉, shown alongside, collects the marks and tools of the print studio and designs them into a poster, then builds an archive by placing the collected records onto floppy disks within a video. To overcome the static concealment of simple storage, the sources are composed as a looping video, so the viewer meets not a halted past but a moving, living archive."
+      "〈Trace〉 was shown in the same exhibition."
+    ],
+    "trace": [
+      "〈Trace〉 collects the marks and tools left in the printmaking studio, designs them into posters, then builds an archive by placing those records onto floppy disks inside a video.",
+      "Stored and left alone, a record closes quietly. To work against that, the material is composed as a loop, so the viewer meets not a halted past but an archive still in motion.",
+      "In the gallery it ran as a two-minute loop on an iPad fixed to the wall. Not a monitor, not a projector — a screen made to be held, screwed flat to the wall, which felt right for a work about how records are kept."
     ]
   };
   if (window.WORKS) window.WORKS.forEach(function (w) { if (EN[w.slug]) w.bodyEn = EN[w.slug]; });

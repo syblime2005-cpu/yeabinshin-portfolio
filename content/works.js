@@ -10,6 +10,9 @@ window.WORKS = [
   /* ---------------- DESIGN ---------------- */
   {
     slug: "garamond",
+    tools: "InDesign · Illustrator · Photoshop",
+    audience: { ko: "서체를 처음 분석해보는 학생과, 가라몬드를 실제로 골라 쓰게 될 디자이너", en: "Students analysing a typeface for the first time, and designers who will actually set in Garamond" },
+    concept: { ko: "기계 설계 이전, 펜을 쥔 손의 궤적에서 이 서체가 나왔다는 점에서 출발했습니다. 112쪽이라는 분량과 180도로 펼쳐지는 제본은 복잡한 도판을 편하게 들여다보게 하려는 선택이었습니다.", en: "It starts from the fact that this letterform came from a hand holding a pen, before mechanical drafting. The 112 pages and the binding that opens fully flat exist so dense plates can be read without fighting the book." },
     category: "design",
     year: "2026",
     title: { ko: "가라몬드, 손의 궤적", en: "Garamond: Tracing the Origin of the Humanistic Type through the Trajectory of the Hand" },
@@ -19,7 +22,12 @@ window.WORKS = [
       en: "2026, 148×210mm, 112p, nude binding, cover: Montblanc EW 240g on black board, text: Montblanc EW 130g, typefaces: Pretendard & Garamond"
     },
     cover: "p04.jpg",
-    images: ["p04.jpg", "p05.jpg", "p06.jpg", "p07.jpg", "p08.jpg", "p09.jpg", "p10.jpg"],
+    images: [],
+    video: "garamond-type.mp4",
+    videoPoster: "garamond-type-poster.jpg",
+    videoNote: { ko: "타이포그래피 모션 · 25초 무음 루프", en: "Typographic motion · 25 s, silent, looping" },
+    spreadsLabel: { ko: "지면", en: "Spreads" },
+    spreads: ["grm-02.jpg", "p05.jpg", "p06.jpg", "p07.jpg", "p08.jpg", "p09.jpg", "p10.jpg"],
     body: [
       "본 작업은 타이포그라피 수업의 일환으로 진행된 가라몬드 서체 분석 및 글꼴분류집 제작 프로젝트입니다. 기계적 설계 이전 인간이 펜을 쥐고 써 내려간 손의 궤적에서 이 서체가 비롯되었다는 점에서 출발했습니다.",
       "알파벳과 숫자, 문장부호를 모눈종이 위에 하나하나 배치하여 그리드와 비례를 기준으로 구조를 세밀하게 뜯어보며 분석했고, 르네상스라는 시대적 배경 속에서 인쇄 기술과 필기 도구가 글자 형태에 미친 영향을 추적했으며 착시를 보정하기 위해 적용된 미묘한 곡선과 획의 굵기 대비 등 서체 이면의 시각적 원리들까지 살펴보았습니다.",
@@ -29,6 +37,9 @@ window.WORKS = [
   },
   {
     slug: "my-garden",
+    tools: "InDesign · Photoshop · Illustrator",
+    audience: { ko: "앨범을 들으며 자기 상처를 지나쳐온 사람들", en: "Listeners who have walked past their own wounds" },
+    concept: { ko: "상처를 숨겨야 할 것이 아니라 내면의 정원을 이루는 재료로 보았습니다. 다섯 트랙을 각기 다른 신체 부위에 대응시키고, 트랙마다 상처 관찰일지를 넣어 ‘관찰하는 태도’ 자체를 시각 장치로 만들었습니다.", en: "Wounds treated not as something to hide but as the most honest material a garden could be built from. Five tracks mapped to five parts of the body, each with an observation log so the act of looking becomes the visual device." },
     category: "design",
     year: "2026",
     title: { ko: "나의 정원에게", en: "To My Garden" },
@@ -37,8 +48,12 @@ window.WORKS = [
       ko: "2026, 160×160mm, 48p, 실 제본, 쉽스킨 겉표지, 하드보드지 위에 랑데뷰 210g, 내지: 랑데뷰 120g, 사용 서체: Leviathan",
       en: "2026, 160×160mm, 48p, thread binding, sheepskin jacket, Rendezvous 210g on board, text: Rendezvous 120g, typeface: Leviathan"
     },
-    cover: "p11.jpg",
-    images: ["p11.jpg", "p12.jpg", "p13.jpg", "p14.jpg"],
+    cover: "mg-cover.jpg",
+    gallery: "slider",
+    imagesLabel: { ko: "실물", en: "The book" },
+    images: ["mg-01.jpg", "mg-02.jpg"],
+    spreadsLabel: { ko: "지면", en: "Spreads" },
+    spreads: ["mg-03.jpg", "mg-04.jpg", "mg-05.jpg", "mg-06.jpg", "p14.jpg"],
     body: [
       "본 프로젝트는 커뮤니케이션 디자인 수업의 일환으로 진행된 앨범 기획 및 비주얼 아이덴티티 작업입니다. 〈나의 정원에게〉는 일상 속에서 필연적으로 마주하게 되는 내면의 상처와 아픔을 외면하지 않고, 이를 나만의 안식처로 전환해 나가는 과정을 시각화한 작업입니다. 앨범을 듣는 이들 또한 이 흐름을 따라 각자의 정원에 도달하기를 바라는 마음으로 기획을 시작했습니다.",
       "앨범에서 말하는 ‘정원’은 스스로 관찰하고 가꾸어낸 안식의 공간을 의미합니다. 내면의 정원을 일구는 행위는 개인이 자신의 상처와 결핍을 어떻게 마주하고 이해하는지를 보여줍니다. 흔히 상처나 결핍은 숨겨야 할 치부로 여겨지지만, 저는 오히려 눈에 가장 직관적으로 드러나는 신체의 상처와 흔적을 내면의 정원을 구성하는 가장 솔직한 재료로 바라보고자 했습니다.",
@@ -47,6 +62,7 @@ window.WORKS = [
   },
   {
     slug: "residue",
+    tools: "Photoshop · Illustrator · 혼합 매체",
     category: "design",
     year: "2026",
     title: { ko: "잔류하다", en: "Residue" },
@@ -67,6 +83,9 @@ window.WORKS = [
   },
   {
     slug: "kitty-bunny-pony",
+    tools: "After Effects · Illustrator · Photoshop",
+    audience: { ko: "패브릭 브랜드 KBP의 기존 고객과, 패턴을 일상에서 쓰는 사람들", en: "KBP's existing customers and people who live with pattern day to day" },
+    concept: { ko: "‘패턴을 일상에서 향유한다’는 브랜드의 전제를 화면 위 리듬으로 옮기는 일이었습니다. 패턴이 주인공이 되도록 배경 움직임을 덜어내고, 중심의 두꺼운 원 스트로크로 응축되는 질서를 만들었습니다.", en: "The brand's premise is that pattern belongs in daily life; the task was translating that into rhythm on screen. Background motion was held back so the patterns could lead, condensing into one thick circular stroke." },
     category: "design",
     year: "2026",
     title: { ko: "키티버니포니 로고 필름", en: "Kitty Bunny Pony — Logo Concept Film" },
@@ -83,6 +102,7 @@ window.WORKS = [
   },
   {
     slug: "ordinary-human",
+    tools: "Photoshop · Illustrator",
     category: "design",
     year: "2025",
     title: { ko: "보통 인간", en: "Ordinary Human" },
@@ -98,6 +118,7 @@ window.WORKS = [
   },
   {
     slug: "disgust-book",
+    tools: "InDesign · Photoshop",
     category: "design",
     year: "2025",
     title: { ko: "혐오의 즐거움에 관하여", en: "On the Pleasure of Disgust" },
@@ -113,6 +134,7 @@ window.WORKS = [
   },
   {
     slug: "where-do-you-wish-to-go",
+    tools: "Illustrator · InDesign",
     category: "design",
     year: "2025",
     title: { ko: "당신이 닿고 싶은 곳으로", en: "Where do you wish to go?" },
@@ -129,6 +151,7 @@ window.WORKS = [
   },
   {
     slug: "altar-of-essence",
+    tools: "Photoshop · Illustrator",
     category: "design",
     year: "2025",
     title: { ko: "본질의 제단", en: "The Altar of Essence" },
@@ -144,6 +167,7 @@ window.WORKS = [
   },
   {
     slug: "remains-card",
+    tools: "Photoshop · Illustrator",
     category: "design",
     year: "2025",
     title: { ko: "痕跡", en: "Remains of Emotions" },
@@ -159,6 +183,7 @@ window.WORKS = [
   },
   {
     slug: "moment",
+    tools: "InDesign · Photoshop",
     category: "design",
     year: "2025",
     title: { ko: "잠 시,", en: "Moment" },
@@ -186,7 +211,7 @@ window.WORKS = [
     role: { ko: "판화 · 라인 에칭", en: "Printmaking · line etching" },
     caption: { ko: "2025, 파브리아노 로자스피나에 라인 에칭, 35×45cm", en: "2025, line etching on Fabriano Rosaspina, 35×45cm" },
     cover: "p39.jpg",
-    images: ["p39.jpg", "p40.jpg", "p41.jpg"],
+    images: ["p39.jpg", "p41.jpg"],
     body: [
       "이 작업은 윌리엄 해즐릿의 에세이 『혐오의 즐거움에 관하여』에서 출발하였습니다. 장식적이고 화려한 프레임과 그 안에 배치된 불완전하고 불쾌한 형상이라는 이중적인 구조를 통해, 아름다움과 추함이 가장 밀착되는 지점에서 발생하는 감각을 시각적으로 드러내고자 하였습니다.",
       "완전함과 이상을 갈망하는 인간은 동시에 균열과 불완전함으로 이루어진 결에 묘하게 끌리며, 해즐릿이 말했듯 혐오는 단순히 회피해야 할 감정이 아니라 살아 있음을 확인하게 하는 모순적인 감정 중 하나입니다.",
@@ -211,35 +236,63 @@ window.WORKS = [
       "인간의 오만함부터 내면의 나약함까지 겉으로 쉽게 드러나지 않는 복합적인 심리 상태를 카드의 앞뒷면에 교차 배치하여, 카드를 마주하고 재조합하는 과정에서 보이지 않는 감정의 궤적을 입체적으로 감각하도록 유도합니다."
     ]
   },
-
   /* ---------------- PROJECT ---------------- */
   {
     slug: "paper-company-zine",
+    tools: "Notion · Figma",
+    audience: { ko: "AI 이미지 앞에서 자기 작업의 자리를 다시 묻고 있는 20대 미술인", en: "Artists in their twenties asking where their own work stands next to AI images" },
+    concept: { ko: "AI 미술을 ‘가짜’라고 부르고 끝내지 않기로 했습니다. 응시하되 그 안에서 피어날 수 있는 창작의 실마리를 찾는 태도를 호 전체의 방향으로 잡았습니다.", en: "We decided not to stop at calling AI art fake. The issue takes the position of looking straight at it while searching for what might still grow there." },
     category: "project",
     year: "2025",
     title: { ko: "PAPER COMPANY _ Zine", en: "PAPER COMPANY _ Zine" },
-    role: { ko: "PP 매거진 3호 · 기획, 글 참여", en: "PP Magazine Vol.3 · planning, writing" },
+    role: { ko: "PP 매거진 3호 · 기획, 글, 최종 검토, 전시 참여", en: "PP Magazine Vol.3 · planning, writing, final review, exhibiting" },
     caption: {
-      ko: "2025, 홍익 아트북 페스티벌 〈Threading Texts〉 출품 · 최원지, 김민재, 신예빈, 안동권, 전아현, 김예성, 이효성, 송정아",
-      en: "2025, presented at Hongik Art Book Festival 〈Threading Texts〉"
+      ko: "2025, 홍익 아트북 페스티벌 〈Threading Texts〉 출품 · 148 × 210 mm, 54p",
+      en: "2025, Hongik Art Book Festival 〈Threading Texts〉 · 148 × 210 mm, 54pp"
     },
-    cover: "p45.jpg",
-    images: ["p45.jpg"],
+    cover: "pc-cover.jpg",
+    images: [],
+    spreads: ["pc-m1.jpg", "pc-m3.jpg", "pc-m4.jpg", "pc-m5.jpg", "pc-m6.jpg", "pc-m2.jpg"],
+    process: [
+      { src: "pc-02.jpg", ko: "Notion — 멤버별 리서치 보드. 각자 조사한 자료가 원고의 출발점", en: "Notion — research board; each member's findings started the writing" },
+      { src: "pc-01.jpg", ko: "Notion — 주 단위 작업 기록 (2025.7 – 10)", en: "Notion — weekly production log, Jul – Oct 2025" },
+      { src: "pc-03.jpg", ko: "Figma — 기획 단계와 멤버별 지면 배분", en: "Figma — planning stage and page allocation per member" },
+      { src: "pc-05.jpg", ko: "Figma — 티징 포스터 · 표지 · 굿즈 검토", en: "Figma — teaser posters, covers, and goods under review" },
+      { src: "pc-04.jpg", ko: "Figma — 회의 자료와 인스타그램 피드 기획", en: "Figma — meeting documents and Instagram feed planning" }
+    ],
     body: [
       "한때 판화를 만들던 손끝을 ‘Printer’라 불렀듯 오늘 우리의 시대를 규정하는 단어는 AI일지 모릅니다. 더 이상 익숙한 재료의 물성이 아니라 알고리즘과 데이터로 형성되는 이미지 앞에서 우리는 낯섦과 가능성을 동시에 마주하게 됩니다. 또 하나의 경계 위에 선 미술은 묻습니다. 가짜인가, 진짜인가, 도구인가, 창작자인가.",
       "사회적 논쟁과 새로운 기법이 교차하는 순간, 20대 미술인으로서 어떤 시각과 태도를 가질 수 있을지 질문하며 3호를 준비했습니다. 3호의 제목 papercompany는 ‘가짜’라는 낙인을 받아온 AI 미술을 응시하면서도 그 속에서 피어날 수 있는 창작의 실마리를 탐색해 나가는 태도를 담고 있습니다.",
-      "2025 홍익 아트북 페스티벌 〈Threading Texts〉에 참가하여 부원들과 함께 기획하고 글을 담당한 매거진 3호를 선보였습니다."
+      "3호는 제가 PP에서 아직 배우던 시기의 작업입니다. 기획 회의와 원고, 최종 검토에 참여했고 편집 디자인은 다른 멤버들이 맡았습니다.",
+      "2025 홍익 아트북 페스티벌 〈Threading Texts〉에 참가해 부원들과 함께 기획하고 글을 담당한 3호를 선보였습니다."
     ]
   },
   {
     slug: "beyond-the-block",
+    tools: "InDesign · Illustrator · Photoshop",
+    audience: { ko: "판화를 배워본 적 없지만 궁금해하는 사람, 그리고 용어 앞에서 멈췄던 저학년", en: "People curious about printmaking who have never tried it, and underclassmen who stalled at the vocabulary" },
+    concept: { ko: "판화가 어려워 보이는 건 실제로 어려워서가 아니라 들어갈 길이 없어서라고 봤습니다. 설득하는 대신 구조로 풀기로 하고, 한 단어만 찾아볼 수 있는 사전과 실제 사용자의 목소리를 두 축으로 세웠습니다.", en: "Printmaking is not as hard as it looks; the real barrier is that there is no way in. So instead of persuading anyone, we answered with structure — a dictionary you can enter at a single word, and interviews that put those words back in working hands." },
     category: "project",
     year: "2026",
     title: { ko: "BEYOND THE BLOCK — 판화 백과사전", en: "BEYOND THE BLOCK — A Printmaking Encyclopedia" },
     role: { ko: "PP 매거진 4호 · 공동 총괄 기획, 편집 디자인", en: "PP Magazine Vol.4 · co-direction, editorial design" },
-    caption: { ko: "2026, 최원지, 신예빈, 안동권, 김민재, 권예은, 최나영, 전진", en: "2026, PP Printmaking Collective" },
-    cover: "p47.jpg",
-    images: ["p47.jpg", "p46.jpg", "p48.jpg"],
+    caption: { ko: "2026, 판화 백과사전 — 1장 사전 / 2장 인터뷰 · 148 × 210 mm, 90p · 스프링 제본", en: "2026, printmaking encyclopedia — dictionary and interviews · 148 × 210 mm, 90pp · spiral-bound" },
+    cover: "btb-cover.jpg",
+    images: [],
+    spreads: [
+      "btb-m1.jpg", "btb-m2.jpg", "btb-m3.jpg",
+      "btb-s1.jpg", "btb-s2.jpg", "btb-s3.jpg", "btb-s4.jpg", "btb-s5.jpg", "btb-s6.jpg",
+      "btb-m4.jpg"
+    ],
+    process: [
+      { src: "btb-p1.jpg", ko: "Notion — 기획 의도와 역할 분담. 백과사전 / 홈메이드 / 인터뷰 세 갈래로 나눔", en: "Notion — brief and role split: dictionary, homemade, interviews" },
+      { src: "btb-p2.jpg", ko: "Notion — 멤버별 리서치 보드. 각자 조사한 항목이 사전 표제어가 됨", en: "Notion — research board; each member's entries became dictionary headwords" },
+      { src: "btb-p7.jpg", ko: "Notion — 주 단위 작업 기록 (2025.10 – 2026.3)", en: "Notion — weekly production log, Oct 2025 – Mar 2026" },
+      { src: "btb-p3.jpg", ko: "Figma — 제목 레터링과 표지 시안. 격자 안에 글자를 가두는 안으로 수렴", en: "Figma — title lettering and cover studies, converging on letters held in a grid" },
+      { src: "btb-p4.jpg", ko: "Figma — 백과사전 내지와 홈메이드 부록 조판", en: "Figma — interior layouts for the dictionary and the homemade supplement" },
+      { src: "btb-p6.jpg", ko: "Figma — 인터뷰 원고 교정. 맞춤법·내용 수정 표시", en: "Figma — interview transcripts in review, spelling and content passes marked" },
+      { src: "btb-p5.jpg", ko: "Figma — 티징 이미지와 레퍼런스 검토", en: "Figma — teaser imagery and reference review" }
+    ],
     body: [
       "무거운 프레스기, 낯선 용어, 복잡한 공정. 판화를 떠올리면 자연스럽게 따라붙는 이미지들입니다. 그리고 그 옆에는 늘 BLOCK이 존재합니다. 이 BLOCK은 이미지를 옮기기 위한 판화의 출발점이지만, 판화가 낯선 이들에게는 인식의 장벽이기도 합니다.",
       "〈BEYOND THE BLOCK〉은 판화를 잘 모르는 사람들, 판화가 어렵고 낯설게 느껴졌던 이들을 위해 판화를 둘러싼 여러 BLOCK, 즉 진입 장벽을 허물고자 기획되었습니다. 우리는 장벽으로서의 BLOCK과 조건으로서의 BLOCK 사이를 오가며, 판화를 기술이 아닌 하나의 방식으로 다시 바라보고자 합니다.",
@@ -249,17 +302,128 @@ window.WORKS = [
   },
   {
     slug: "homemade-printmaking",
+    tools: "InDesign · Illustrator",
+    audience: { ko: "프레스기도 공방도 없는 사람, 집에서 한 번 해보고 싶은 사람", en: "People without a press or a studio who want to try it once at home" },
+    concept: { ko: "장비가 없으면 시작조차 못 하는 상황을 재료로 풀었습니다. 집에 있거나 쉽게 살 수 있는 것으로 대체 공정을 짜고, 따라 하는 동안 책이 펼쳐진 채 있도록 제본을 정했습니다.", en: "Without equipment you cannot even begin, so we answered with materials — processes rebuilt from what is already at home, and a binding chosen so the book stays open on the desk while you follow it." },
     category: "project",
     year: "2026",
     title: { ko: "홈메이드 판화", en: "Homemade Printmaking" },
-    role: { ko: "PP 매거진 4호 부록 · 공동 총괄 기획, 활동, 검토", en: "PP Magazine Vol.4 supplement · co-direction, review" },
-    caption: { ko: "2026, 중철제본 매뉴얼 북 · 최원지, 신예빈, 안동권, 김민재, 권예은, 최나영, 전진", en: "2026, saddle-stitched manual book" },
-    cover: "p49.jpg",
-    images: ["p49.jpg"],
+    role: { ko: "PP 매거진 4호 부록 · 공동 총괄 기획, 제작 실험, 홍보", en: "PP Magazine Vol.4 supplement · co-direction, production testing, promotion" },
+    caption: { ko: "2026, 4호 부록 매뉴얼 북 — 대체 재료로 짠 6가지 공정 · 중철제본", en: "2026, supplement manual to Vol.4 — six processes rebuilt from substitute materials · saddle-stitched" },
+    cover: "hm-cover.jpg",
+    images: [],
+    spreads: ["hm-m1.jpg", "hm-m2.jpg", "hm-m3.jpg", "hm-m4.jpg", "hm-m5.jpg", "hm-m6.jpg"],
+    processNote: { ko: "제작 과정 사진: 안동권, 최나영", en: "Process photography: An Dongkwon, Choi Nahyoung" },
+    process: [
+      { src: "hm-p1.jpg", ko: "포토폴리머 — 도안을 올린 황색 포지티브 필름", en: "Photopolymer — the artwork output onto yellow positive film" },
+      { src: "hm-p2.jpg", ko: "포토폴리머 — 공방 노광기 대신 네일 UV 램프로 감광", en: "Photopolymer — exposed under a nail-salon UV lamp instead of a studio unit" },
+      { src: "hm-p3.jpg", ko: "포토폴리머 — 경화된 판을 재단해 나무 블록에 붙이기", en: "Photopolymer — the hardened plate trimmed and mounted on a wood block" },
+      { src: "hm-p4.jpg", ko: "포토폴리머 — 완성한 도장을 찍어 찍힘 상태 확인", en: "Photopolymer — the finished stamp pulled and checked" },
+      { src: "hm-p5.jpg", ko: "시아노타입 — 키트 용액을 종이컵에 계량해 조제", en: "Cyanotype — kit solutions measured out in paper cups" },
+      { src: "hm-p6.jpg", ko: "시아노타입 — 노광한 종이를 물에 담가 수세", en: "Cyanotype — the exposed sheet washed out in water" },
+      { src: "hm-p7.jpg", ko: "키친 리소그래피 — 호일 판 위에 콜라를 부어 부식", en: "Kitchen lithography — cola poured over a foil plate to etch it" },
+      { src: "hm-p8.jpg", ko: "리놀륨 형압 — 프레스기 없이 눌러 찍은 종이를 들어 올리기", en: "Linoleum embossing — lifting a sheet pressed by hand, no press involved" },
+      { src: "hm-p9.jpg", ko: "스텐실 — 클립·실·핀을 올리고 스프레이로 뜬 자국", en: "Stencil — clips, thread and pins laid down, then sprayed around" }
+    ],
     body: [
       "매거진의 부록으로 기획된 본 책자는 판화를 둘러싼 진입 장벽을 낮추고, 일상 공간에서의 예술적 실천을 도모하는 홈메이드 판화 매뉴얼 북입니다. 무거운 프레스기와 복잡한 공정 대신, 우리 주변에서 언제나 쉽게 접할 수 있는 대체 재료와 도구들을 발굴하여 일상적인 판화 제작 프로세스를 제안합니다.",
       "판화과 재학생들이 전공 과정에서 직접 겪고 실험한 실증적 데이터와 제작 노하우를 바탕으로 구성되었으며, 정교한 튜토리얼을 통해 기술 중심의 판화를 하나의 친근한 놀이이자 주체적인 표현 방식으로 치환합니다.",
       "가볍고 직관적인 중철제본의 형식을 취하여 실무 제작 과정에서 독자들이 쉽게 펼쳐보고 참고할 수 있는 유연한 기능성을 더했습니다. 판화를 하나의 전공 영역에 한정 짓지 않고, 누구나 예술의 생산자가 될 수 있도록 돕는 실천적 가이드라인을 지향합니다."
+    ]
+  },
+  {
+    slug: "pp-vol5",
+    tools: "Notion · Figma",
+    audience: { ko: "졸업전시 이후 자기 작업을 어디에 둘지 고민해본 미대생", en: "Art students who have wondered where their work goes after the degree show" },
+    concept: { ko: "‘보존’이라는 말에 작품을 지키는 일과 작품을 모아두는 일이 섞여 있다는 데서 출발했습니다. 기술적인 복원 이야기로 흐르지 않도록 ‘무엇을, 왜, 어떻게 남길 것인가’로 질문을 바꿔 잡았습니다.", en: "The word \u2018conservation\u2019 holds two things at once: keeping work alive, and collecting it. To avoid drifting into technical restoration, we reframed it as what we keep, why, and how." },
+    category: "project",
+    year: "2026",
+    title: { ko: "PP Vol.5 〈K.E.E.P.〉", en: "PP Vol.5 〈K.E.E.P.〉" },
+    role: { ko: "PP 매거진 5호 · 총괄 기획, 일정·역할 설계, 원고 피드백, 웹사이트 기획", en: "PP Magazine Vol.5 · project direction, scheduling, editorial feedback, website planning" },
+    caption: {
+      ko: "2026.4–8, 주제: 보존 — 물질적 / 아카이브적 / 디지털 보존 3개 챕터 · 182 × 257 mm, 62p",
+      en: "Apr–Aug 2026, on conservation — physical, archival, digital · 182 × 257 mm, 62pp"
+    },
+    link: { label: "ppzine.com", url: "https://www.ppzine.com/contents/pp-vol-5" },
+    cover: "ppv5-cover.jpg",
+    images: [],
+    spreads: ["ppv5-cover.jpg", "ppv5-m2.jpg", "ppv5-m3.jpg", "ppv5-m4.jpg", "ppv5-m5.jpg", "ppv5-m1.jpg"],
+    process: [
+      { src: "ppv5-01.jpg", ko: "Notion — 주 단위 작업 기록 (2026.4 – 8)", en: "Notion — weekly production log, Apr – Aug 2026" },
+      { src: "ppv5-02.jpg", ko: "Figma — 5호 전체 워크플로우. 기획·원고·시각화·가제본·티징 구간 배치", en: "Figma — full workflow: planning, drafts, visuals, mockups, teasers laid out in bands" },
+      { src: "ppv5-03.jpg", ko: "Figma — 캘린더와 멤버별 역할 분담", en: "Figma — calendar and role assignments per member" }
+    ],
+    body: [
+      "5호의 주제는 ‘보존’입니다. 보존이라는 말에 작품 자체를 지키는 일과 작품을 수집·보관하는 일, 두 가지가 섞여 있다는 데서 출발했습니다. 기술적인 복원 이야기로 흘러가지 않도록, ‘무엇을, 왜, 어떻게 남길 것인가’라는 질문으로 방향을 잡았습니다.",
+      "챕터는 셋으로 나눴습니다. 물질적 보존은 ‘당신의 졸업전시 작품은 지금 어디에 있나요?’라는 질문에서 시작해 동료·선배·교수 인터뷰와 재료의 유한성을 다룹니다. 아카이브적 보존은 미술관의 거대한 시스템을 미대생의 방 크기로 옮겨놓은 실용 가이드입니다. 마지막은 형태가 없는 작업의 디지털 보존을 봅니다.",
+      "제 역할은 전체 일정과 역할 분담을 설계하고 원고에 피드백을 주는 쪽이었습니다. 4월부터 8월까지 주 단위로 진행 상황을 기록하고, 기획·원고·시각화·가제본·티징이 서로 밀리지 않게 간격을 잡았습니다. 여덟 명이 각자 다른 속도로 움직이는 상황에서 ‘언제까지 무엇이 나와야 다음 사람이 시작할 수 있는지’를 맞추는 일이 대부분이었습니다.",
+      "편집 디자인과 지면 작업은 다른 멤버들이 맡았습니다. 저는 호 전체의 방향을 잡고 원고를 읽고 되돌려주는 자리에 있었습니다.",
+      "함께 준비한 웹진 사이트는 기획 단계에 참여했습니다. 유료·무료 개발 범위, 도메인, 로그인 권한 구조, 콘텐츠 카테고리 운영 방식을 멤버들과 문서로 정리해 개발팀에 넘겼습니다."
+    ]
+  },
+  {
+    slug: "dd-zine",
+    tools: "Figma · Illustrator · Photoshop",
+    audience: { ko: "PP를 이미 아는 미대생, 그리고 매거진 발행 사이 기간에 PP를 처음 접하는 사람", en: "Art students who already follow PP, and newcomers who find it between issues" },
+    concept: { ko: "본 계정이 발행을 알리는 자리라면 서브 계정은 그 사이를 채우는 자리입니다. 미대생들이 평소 모으는 것들을 짧은 호흡으로 쌓아두되, 여덟 명이 올려도 한 사람이 만든 것처럼 보이게 하는 것이 과제였습니다.", en: "The main account announces issues; this one fills the gaps. It had to hold the small things art students collect, and still look like one hand made it even with eight people posting." },
+    category: "project",
+    year: "2026",
+    title: { ko: "dd.zine — Digital Digging", en: "dd.zine — Digital Digging" },
+    role: { ko: "PP 서브 계정 · 아이덴티티, 콘텐츠 시스템 디자인", en: "PP sub-account · identity and content system" },
+    caption: {
+      ko: "2026, 인스타그램 서브 계정 아이덴티티 — 로고, 컬러 시스템, 콘텐츠 템플릿, 피드 운영 가이드",
+      en: "2026, Instagram sub-account identity — logo, color system, content templates, feed guidelines"
+    },
+    link: { label: "@dd.zine._", url: "https://www.instagram.com/dd.zine._/" },
+    cover: "ddz-logo.jpg",
+    images: ["ddz-07.jpg"],
+    process: [
+      { src: "ddz-01.jpg", ko: "Figma — 로고 설명과 세 갈래 색 체계 정리", en: "Figma — the logo rationale and the three-way colour system" },
+      { src: "ddz-03.jpg", ko: "Figma — 제목 길이별 텍스트 템플릿 전개", en: "Figma — text templates built out for short, medium, and long titles" },
+      { src: "ddz-05.jpg", ko: "Figma — 표지·내지 시안 (8/7). 확정안 표시", en: "Figma — cover and interior drafts (Aug 7), chosen direction marked" },
+      { src: "ddz-04.jpg", ko: "Figma — 피드 배치 시안 (8/15). 네 가지 안 비교", en: "Figma — feed layout drafts (Aug 15), four options compared" },
+      { src: "ddz-02.jpg", ko: "Figma — 전체 피드 프레임 보드. 색으로 분류가 읽히는지 멀리서 확인", en: "Figma — the whole feed as frames, checked from a distance to see if the colour sorting reads" },
+      { src: "ddz-06.jpg", ko: "Figma — 팀 피드백. 별표로 선호안 표시", en: "Figma — team feedback, preferences marked with stars" }
+    ],
+    body: [
+      "PP 본 계정이 매거진 발행을 알리는 자리였다면, 서브 계정은 그 사이 기간을 채우는 자리가 필요했습니다. 미대생들이 평소 보고 모으는 것들을 짧은 호흡으로 쌓아두는 계정, ‘Digital Digging’을 기획하고 아이덴티티와 콘텐츠 시스템을 맡았습니다.",
+      "로고는 기존 PP 로고를 상하 반전해서 만들었습니다. 원래 기둥이 있던 자리에 아래로 뾰족한 돌기를 두어 ‘파낸다’는 동작을 형상으로 담았고, 위쪽은 손잡이로 읽히게 했습니다. 본 계정과 한눈에 같은 식구로 보이면서도 역할이 다르다는 걸 형태 하나로 구분하려 했습니다.",
+      "콘텐츠는 세 갈래로 나누고 각각에 색을 묶었습니다. PP 인사이트는 연두(#83FF83), 대중문화는 마젠타(#FF39EF), 순수미술은 주황(#FF4537). 피드를 멀리서 봤을 때 색만으로 분류가 읽히도록 하고, 가운데 열에는 세 갈래 어디에도 속하지 않는 글을 배치해 리듬을 만들었습니다.",
+      "템플릿은 글자 길이가 들쭉날쭉한 수집 콘텐츠를 누구나 같은 품질로 올릴 수 있게 설계했습니다. 제목 길이별 변형안을 여러 벌 만들어 팀원들이 고르게 했고, 업로드 양식과 댓글 운영 규칙까지 문서로 정리했습니다.",
+      "시안은 팀 피드백을 받아 여러 차례 고쳤습니다. 로고가 제목을 가리는 문제, 피드 전체의 명도 균형, 텍스트 피드에서 로고를 가운데 맞추는 문제 등이 그 과정에서 걸러졌습니다."
+    ]
+  },
+  {
+    slug: "pp-website",
+    category: "project",
+    year: "2026",
+    title: { ko: "ppzine.com", en: "ppzine.com" },
+    role: { ko: "PP 웹진 · 기획 참여", en: "PP web magazine · planning" },
+    tools: "Figma · Notion",
+    audience: {
+      ko: "매거진을 실물로 구하기 어려운 독자, 그리고 지난 호를 다시 찾아보려는 사람들",
+      en: "Readers who can't get a physical copy, and anyone looking for a back issue"
+    },
+    concept: {
+      ko: "종이로만 존재하던 PP를 온라인으로 옮기는 일. 매 호가 끝나면 사라지던 글을 호수별로 찾아볼 수 있게 만드는 것이 목표였습니다.",
+      en: "Moving PP online. Each issue used to disappear once it was printed; the goal was to make past writing findable by volume."
+    },
+    caption: {
+      ko: "2026, PP 웹진 — 개발 범위·도메인·권한 구조·콘텐츠 운영 방식 기획 (개발은 외부 개발팀)",
+      en: "2026, PP web magazine — scope, domain, permissions, and content operations planning (built by an external dev team)"
+    },
+    link: { label: "ppzine.com", url: "https://www.ppzine.com/" },
+    cover: "ppz-01.jpg",
+    images: [],
+    spreadsLabel: { ko: "화면", en: "Screens" },
+    spreads: ["ppz-01.jpg", "ppz-02.jpg", "ppz-03.jpg", "ppz-04.jpg",
+              "ppz-05.jpg", "ppz-06.jpg", "ppz-07.jpg", "ppz-08.jpg"],
+    body: [
+      "PP는 매 호가 끝나면 그 글들이 사실상 사라졌습니다. 실물을 구하지 못한 사람은 읽을 방법이 없었고, 지난 호를 찾는 사람도 마찬가지였습니다. 웹진은 그 문제를 풀기 위한 기획이었습니다.",
+      "저는 개발이 아니라 그 앞 단계를 맡았습니다. 유료 개발과 무료 개발의 범위를 비교해 어디까지 직접 하고 어디부터 맡길지 정하고, 도메인과 호스팅 비용을 따져 예산 안에 들어오게 했습니다.",
+      "권한 구조도 정리했습니다. 관리자와 일반 독자가 보는 화면이 어떻게 달라야 하는지, 로그인을 거치지 않고도 읽을 수 있어야 하는 부분은 어디까지인지를 멤버들과 문서로 맞췄습니다. 구독이나 결제 같은 기능은 지금 규모에 맞지 않는다고 판단해 범위에서 뺐습니다.",
+      "콘텐츠 운영 방식은 매거진 구조를 그대로 옮기지 않고 다시 짰습니다. 호수별 묶음과 카테고리별 검색이 같이 돌아가야 지난 글이 계속 읽힌다고 봤습니다.",
+      "정리한 내용을 개발팀에 넘겼고, 사이트는 그 기획을 바탕으로 만들어졌습니다."
     ]
   },
 
@@ -268,19 +432,50 @@ window.WORKS = [
     slug: "archive-as-form",
     category: "exhibition",
     year: "2025",
-    title: { ko: "ARCHIVE AS FORM / Trace", en: "ARCHIVE AS FORM / Trace" },
-    role: { ko: "단체전 출품 · 설치, 단채널 비디오", en: "Group exhibition · installation, single-channel video" },
+    title: { ko: "ARCHIVE AS FORM", en: "ARCHIVE AS FORM" },
+    role: { ko: "단체전 출품 · 설치", en: "Group exhibition · installation" },
     caption: {
-      ko: "2025, 실리콘·플로피디스크, 13×13cm / Trace — 단채널 비디오, 컬러, 무음, 2분 루프, 아이패드",
-      en: "2025, silicone & floppy disks, 13×13cm / Trace — single-channel video, color, silent, 2 min loop, iPad"
+      ko: "2025, 실리콘·플로피디스크, 13×13cm · 《ARCHIVE AS FORM》 #25 AUG–SEPT",
+      en: "2025, silicone & floppy disks, 13×13cm · 《ARCHIVE AS FORM》 #25 AUG–SEPT"
     },
     cover: "p51.jpg",
-    images: ["p51.jpg", "p50.jpg", "p52.jpg"],
+    images: [],
+    spreadsLabel: { ko: "전시 전경", en: "Installation views" },
+    spreads: ["p51.jpg", "af-01.jpg", "p50.jpg"],
     body: [
       "본 작업은 아카이브의 이중적 성격인 ‘보존’과 ‘은폐’에서 출발하여, 결과 중심의 기록을 넘어 과정의 층위를 담아내는 ‘살아있는 아카이브’의 형식을 탐구합니다.",
       "주요 오브제인 플로피디스크는 데이터를 저장하지만 실체를 드러내지 않는 특성을 지니며, 이는 무수한 행위의 흔적을 품고 있으면서도 최종적으로는 종이 위의 표면만을 제시하는 판화의 구조와 닮아 있습니다. 기록은 이렇듯 보이지 않는 내부와 드러나는 외부 사이의 간극 속에서 비로소 성립합니다.",
       "저는 이러한 판화적 사고를 확장하기 위해 실리콘의 반투명하고 유연한 물성을 매개로 아카이브의 형식을 재구성했습니다. 책장의 형태에 나열된 플로피디스크와 이를 감싸는 반투명한 층위들은 끊임없이 겹쳐지고 변주되는 흔적들의 은유입니다.",
-      "함께 전시된 〈Trace〉는 판화실의 흔적과 도구들을 수집해 포스터로 디자인한 뒤, 수집된 기록물을 영상 속 플로피디스크에 담아 아카이브를 구축한 작업입니다. 단순히 저장만 했을 때 발생하는 정적인 은폐성을 극복하고자 반복 재생되는 영상으로 구성함으로써, 감상자가 멈춰 있는 과거가 아닌 끊임없이 움직이는 ‘동적인 아카이브 현장’을 마주하게 했습니다."
+      "같은 전시에 〈Trace〉를 함께 내놓았습니다."
+    ]
+  },
+  {
+    slug: "trace",
+    category: "exhibition",
+    year: "2025",
+    title: { ko: "Trace", en: "Trace" },
+    role: { ko: "단체전 출품 · 단채널 비디오, 포스터 디자인", en: "Group exhibition · single-channel video, poster design" },
+    tools: "Figma · Photoshop · Illustrator",
+    audience: {
+      ko: "작업이 끝나면 남는 것이 결과물뿐이라고 생각해온 사람",
+      en: "Anyone who assumed that when the work is done, only the object is left"
+    },
+    concept: {
+      ko: "판화실에 남은 흔적과 도구를 모아 포스터로 만들고, 그 기록을 영상 속 플로피디스크에 담았습니다. 저장만 하면 기록은 조용히 닫히기 때문에, 2분 루프로 계속 돌려 멈춘 과거가 아니라 움직이는 현장으로 보이게 했습니다.",
+      en: "Traces and tools left in the printmaking studio, collected into posters, then loaded into floppy disks inside the video. Stored and left alone, a record quietly closes; looping it for two minutes keeps it a site still in motion rather than a past that has stopped."
+    },
+    caption: {
+      ko: "2025, 단채널 비디오 — 컬러, 무음, 2분 루프, 아이패드 설치",
+      en: "2025, single-channel video — color, silent, 2 min loop, shown on a wall-mounted iPad"
+    },
+    cover: "trace-01.jpg",
+    images: [],
+    spreadsLabel: { ko: "전시 전경", en: "Installation view" },
+    spreads: ["trace-01.jpg"],
+    body: [
+      "〈Trace〉는 판화실의 흔적과 도구들을 수집해 포스터로 디자인한 뒤, 수집된 기록물을 영상 속 플로피디스크에 담아 아카이브를 구축한 작업입니다.",
+      "단순히 저장만 했을 때 발생하는 정적인 은폐성을 극복하고자 반복 재생되는 영상으로 구성했습니다. 감상자는 멈춰 있는 과거가 아니라 끊임없이 움직이는 ‘동적인 아카이브 현장’을 마주하게 됩니다.",
+      "전시장에서는 벽에 고정한 아이패드로 2분 루프를 계속 재생했습니다. 모니터도 프로젝터도 아닌, 손에 들던 화면을 벽에 박아두는 방식이 기록을 다루는 이 작업의 태도와 맞는다고 봤습니다."
     ]
   }
 ];

@@ -9,7 +9,7 @@
   function WRITINGS_(){ return window.WRITINGS || []; }
   function ARCHIVE_(){ return window.ARCHIVE || []; }
   var main = document.getElementById("main");
-  var lang = localStorage.getItem("yb-lang") === "en" ? "en" : "ko";
+  var lang = (function(){ try { var v = localStorage.getItem("yb-lang"); if (v === "ko" || v === "en") return v; } catch(e) {} return "en"; })();
 
   var T = {
     ko: {
@@ -19,7 +19,8 @@
       aboutLead: "어떤 모토로, 어떤 작업을 하는 사람인가",
       writingLead: "직접 쓴 글을 모아둔 곳",
       archiveLead: "사진 · 음악 · 공간 · 글 · 책 — 영감이 된 것들",
-      description: "작업 노트", info: "정보", year: "연도", medium: "재료", role: "분류", link: "링크",
+      description: "작업 노트", info: "정보", year: "연도", medium: "재료", role: "역할", link: "링크",
+      tools: "툴", brief: "개요", madeFor: "누구를 위해", concept: "컨셉", process: "과정", work: "작업", spreads: "목업", motion: "모션",
       prev: "이전", next: "다음", back: "목록으로",
       noPost: "아직 올린 글이 없습니다.", noArch: "아직 모아둔 것이 없습니다.",
       notFound: "페이지를 찾을 수 없습니다.",
@@ -32,7 +33,8 @@
       aboutLead: "The motto, and the work that follows from it",
       writingLead: "Texts written by me",
       archiveLead: "Images · music · places · texts · books that stayed with me",
-      description: "Work note", info: "Info", year: "Year", medium: "Medium", role: "Category", link: "Link",
+      description: "Work note", info: "Info", year: "Year", medium: "Medium", role: "Role", link: "Link",
+      tools: "Tools", brief: "Brief", madeFor: "Made for", concept: "Concept", process: "Process", work: "Work", spreads: "Mockups", motion: "Motion",
       prev: "Prev", next: "Next", back: "Back to index",
       noPost: "No texts yet.", noArch: "Nothing collected yet.",
       notFound: "Page not found.",
@@ -100,6 +102,7 @@
     reveal();
     if (p === "/") startStage();
     if (seg[0] === "admin" && window.Admin) window.Admin.bind();
+    bindProcess();
     var base = lang === "en" ? "Yea Bin Shin" : "신예빈";
     var tt = titleFor(seg);
     document.title = (tt && tt !== base) ? tt + " · " + base : base + " · " + (lang === "en" ? "Portfolio" : "포트폴리오");
@@ -115,7 +118,7 @@
   function find(slug) { return WORKS_().filter(function (w) { return w.slug === slug; })[0]; }
 
   /* ---------- 홈: 흩어진 콜라주 ---------- */
-  var COLLAGE = ["garamond", "moment", "archive-as-form", "remains-card", "my-garden", "ordinary-human"];
+  var COLLAGE = ["beyond-the-block", "kitty-bunny-pony", "garamond", "homemade-printmaking", "my-garden", "residue"];
   var DEPTH = [14, -22, 10, -16, 20, -26];   /* 마우스 패럴랙스 깊이 */
   var stageTimer = null;
 
@@ -146,7 +149,7 @@
 
       '<section class="home-sec">' +
       '<div class="sec-head"><h2>' + esc(t("selected")) + '</h2><span>' + WORKS_().length + ' works</span></div>' +
-      '<div class="grid">' + WORKS_().slice(0, 4).map(cardHTML).join("") + '</div>' +
+      '<div class="grid">' + ["beyond-the-block","kitty-bunny-pony","garamond","my-garden"].map(find).filter(Boolean).map(cardHTML).join("") + '</div>' +
       '<a class="more" href="/works" data-link>' + esc(t("allWorks")) + ' &rarr;</a>' +
       '</section>' +
 
@@ -194,7 +197,7 @@
   /* ---------- 작업 목록 ---------- */
   function cardHTML(w, i) {
     return '<a class="card" href="/work/' + w.slug + '" data-link>' +
-      '<span class="frame"><img src="' + img(w, w.cover || w.images[0]) + '" alt="' + esc(L(w.title)) + '" loading="lazy"></span>' +
+      '<span class="frame">' + ((w.cover || (w.images && w.images[0])) ? '<img src="' + img(w, w.cover || w.images[0]) + '" alt="' + esc(L(w.title)) + '" loading="lazy">' : '<span class="noimg"></span>') + '</span>' +
       '<span class="meta"><span class="no">' + String((i || 0) + 1).padStart(2, "0") + '</span>' +
       '<h3>' + esc(w.title.ko) + '<span class="en">' + esc(w.title.en) + '</span></h3></span>' +
       '<span class="cap">' + esc(L(w.caption)) + '</span>' +
@@ -231,13 +234,39 @@
       '<div class="detail-side">' +
       row(t("year"), esc(w.year)) +
       row(t("role"), esc(L(w.role))) +
+      (w.tools ? row(t("tools"), esc(w.tools)) : "") +
       row(t("medium"), esc(L(w.caption))) +
       (w.link ? row(t("link"), '<a href="' + esc(w.link.url) + '" target="_blank" rel="noopener">' + esc(w.link.label) + ' &nearr;</a>') : "") +
       '</div></div>' +
 
-      '<div class="figs">' + w.images.map(function (f) {
-        return '<figure class="fig" data-full="' + img(w, f) + '"><img src="' + img(w, f) + '" alt="' + esc(L(w.title)) + '" loading="lazy"></figure>';
-      }).join("") + '</div>' +
+      (w.images && w.images.length ?
+        (w.gallery === "slider"
+          ? railHTML(w, w.images.map(function (f) { return { src: f }; }),
+                      (w.imagesLabel && L(w.imagesLabel)) || t("work"), true)
+          : '<div class="figs">' + w.images.map(function (f) {
+              return '<figure class="fig" data-full="' + img(w, f) + '"><img src="' + img(w, f) + '" alt="' + esc(L(w.title)) + '" loading="lazy"></figure>';
+            }).join("") + '</div>')
+        : "") +
+
+      (w.video ?
+        '<section class="vid"><p class="label">' + esc(t("motion")) +
+          (w.videoNote ? '<span class="credit">' + esc(L(w.videoNote)) + '</span>' : "") + '</p>' +
+        '<video src="' + img(w, w.video) + '"' + (w.videoPoster ? ' poster="' + img(w, w.videoPoster) + '"' : "") +
+          ' controls loop muted playsinline preload="metadata"></video></section>' : "") +
+
+      (w.spreads && w.spreads.length
+        ? railHTML(w, w.spreads.map(function (f) { return { src: f }; }),
+                   (w.spreadsLabel && L(w.spreadsLabel)) || t("spreads"), true) : "") +
+
+      (w.process && w.process.length ? processHTML(w) : "") +
+
+      ((w.audience && L(w.audience)) || (w.concept && L(w.concept)) ?
+        '<div class="body-wrap brief">' +
+        '<p class="label">' + esc(t("brief")) + '</p>' +
+        '<div class="body-text">' +
+        (w.audience && L(w.audience) ? '<p class="bf"><span>' + esc(t("madeFor")) + '</span>' + esc(L(w.audience)) + '</p>' : "") +
+        (w.concept && L(w.concept) ? '<p class="bf"><span>' + esc(t("concept")) + '</span>' + esc(L(w.concept)) + '</p>' : "") +
+        '</div></div>' : "") +
 
       '<div class="body-wrap">' +
       '<p class="label">' + esc(t("description")) + '</p>' +
@@ -249,6 +278,65 @@
       (next ? '<a href="/work/' + next.slug + '" data-link style="text-align:right">' + esc(L(next.title)) + ' &rarr;</a>' : "<span></span>") +
       '</nav></div>';
   }
+  function railHTML(w, items, label, full, note) {
+    return '<section class="proc' + (full ? ' proc--full' : '') + '" data-proc>' +
+      '<div class="proc-top">' +
+        '<p class="label">' + esc(label) + (note ? '<span class="credit">' + esc(note) + '</span>' : "") + '</p>' +
+        '<div class="proc-nav">' +
+          '<span class="proc-count"><b>1</b> / ' + items.length + '</span>' +
+          '<button class="proc-btn" data-dir="-1" aria-label="prev">&larr;</button>' +
+          '<button class="proc-btn" data-dir="1" aria-label="next">&rarr;</button>' +
+        '</div>' +
+      '</div>' +
+      '<div class="proc-rail">' + items.map(function (x) {
+        var cap = lang === "en" ? (x.en || x.ko) : (x.ko || x.en);
+        return '<figure class="proc-item" data-full="' + img(w, x.src) + '">' +
+          '<span class="proc-frame"><img src="' + img(w, x.src) + '" alt="" loading="lazy"></span>' +
+          (cap ? '<figcaption>' + esc(cap) + '</figcaption>' : "") + '</figure>';
+      }).join("") + '</div></section>';
+  }
+
+  function processHTML(w) { return railHTML(w, w.process, t("process"), false, w.processNote && L(w.processNote)); }
+
+  function bindProcess() {
+    document.querySelectorAll("[data-proc]").forEach(function (sec) {
+      var rail = sec.querySelector(".proc-rail");
+      var count = sec.querySelector(".proc-count b");
+      var items = sec.querySelectorAll(".proc-item");
+      var idx = 0, timer = null, lockUntil = 0;
+      function step() { return items.length ? items[0].getBoundingClientRect().width + 14 : rail.clientWidth; }
+      function maxIdx() { return Math.max(0, Math.round((rail.scrollWidth - rail.clientWidth) / step())); }
+      function paint() {
+        count.textContent = Math.min(idx + 1, items.length);
+        sec.querySelectorAll(".proc-btn").forEach(function (b) {
+          var d = +b.dataset.dir;
+          b.disabled = (d < 0 && idx <= 0) || (d > 0 && idx >= maxIdx());
+        });
+      }
+      /* 목표 인덱스를 따로 들고 간다. scrollBy 로 하면 애니메이션 중에 누른 클릭이 묻힌다. */
+      function go(d) {
+        idx = Math.min(Math.max(idx + d, 0), maxIdx());
+        lockUntil = Date.now() + 700;   /* 부드러운 스크롤이 끝나기 전에 되맞추지 않는다 */
+        rail.scrollTo({ left: idx * step(), behavior: "smooth" });
+        paint();
+      }
+      sec.querySelectorAll(".proc-btn").forEach(function (b) {
+        b.addEventListener("click", function () { go(+b.dataset.dir); });
+      });
+      rail.addEventListener("scroll", function () {   /* 손으로 밀었을 때만 되맞춘다 */
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+          if (Date.now() < lockUntil) return;
+          idx = Math.min(Math.max(Math.round(rail.scrollLeft / step()), 0), maxIdx());
+          paint();
+        }, 140);
+      }, { passive: true });
+      window.addEventListener("resize", paint);
+      paint();
+    });
+  }
+
+
   function row(k, v) { return '<div class="row"><span class="k">' + esc(k) + '</span><span>' + v + '</span></div>'; }
 
   /* ---------- 소개 ---------- */

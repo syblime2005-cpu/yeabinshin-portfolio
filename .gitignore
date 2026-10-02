@@ -1,4 +1,6 @@
 .DS_Store
-node_modules/
+.claude/
 .vercel
+_미리보기/
 dist/
+node_modules/
