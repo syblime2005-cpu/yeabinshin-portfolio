@@ -48,6 +48,7 @@
   function catName(key) { var c = cat(key); return lang === "en" ? c.en : c.ko; }
   /* 글·아카이브처럼 한 덩어리에 en 하위 객체를 둔 항목에서 언어에 맞는 값을 고른다 */
   function P(o, k) { return (lang === "en" && o.en && o.en[k]) ? o.en[k] : o[k]; }
+  function aboutText() { return (lang === "en" && S.aboutEn && S.aboutEn.length) ? S.aboutEn : S.about; }
   function resolve(p) { return (window.RESOLVE_ASSET ? window.RESOLVE_ASSET(p) : p); }
   function img(w, name) { return resolve("/images/works/" + name); }
   function bodyOf(w) { return (lang === "en" && w.bodyEn && w.bodyEn.length) ? w.bodyEn : w.body; }
@@ -157,7 +158,7 @@
 
       '<section class="home-sec">' +
       '<div class="sec-head"><h2>' + esc(t("about")) + '</h2><span>' + esc(t("aboutLead")) + '</span></div>' +
-      '<p>' + esc(S.about[0]) + '</p>' +
+      '<p>' + esc(aboutText()[0]) + '</p>' +
       '<a class="more" href="/about" data-link>' + esc(t("readMore")) + ' &rarr;</a>' +
       '</section>' +
       '</div>';
@@ -347,7 +348,7 @@
       '<p class="eyebrow"><span>' + esc(t("about")) + '</span><span>' + esc(t("aboutLead")) + '</span></p>' +
       '<div class="about-grid"><div>' +
       '<h1 class="about-motto">' + esc(L(S.motto)) + '</h1>' +
-      '<div class="about-body">' + S.about.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") + '</div>' +
+      '<div class="about-body">' + aboutText().map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") + '</div>' +
       '</div><aside class="about-side">' +
       '<img class="portrait" src="' + resolve("/images/site/portrait.jpg") + '" alt="' + esc(L(S.name)) + '">' +
       '<div class="cv">' + S.cv.map(function (sec) {

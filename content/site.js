@@ -25,11 +25,17 @@ window.SITE = {
 
   /* 소개 페이지 본문 */
   about: [
-    "저는 하나의 작업을 시작할 때 자주 그리고 오래 머뭅니다. 작업이 곧바로 손에 잡히는 것보다 시간을 들여야만 겨우 보이기 시작하는 지점이 있다고 믿기 때문입니다. 일상에서 쉽게 지나쳐지지 않는 감정, 겉으로 드러나지 않는 이면을 붙잡고 오래 들여다보는 것이 제 작업의 시작점입니다.",
-    "언어로는 다다르지 못하는 지점이 늘 남았고 그 자리를 메우려 이미지로 표현하기 시작했습니다. 제 안에 머물던 생각을 시각적 형태로 옮겼을 때 비로소 온전히 표현했다는 감각을 얻습니다. 담고 싶은 메시지를 저만의 방식으로 담아내는 과정은 그 어떤 일보다 저를 깊게 몰입하게 합니다. 다만 그것이 지나치게 개인적인 언어에 머무르지 않도록 정제하는 과정에서 균형을 찾을 때까지 포기하지 않고 작업의 완성도를 높여 나갑니다.",
-    "판화를 배우며 재료와 형상이 직접 부딪혀 만들어지는 반응을 다뤄본 경험은 창작이 절대 가볍지 않은 과정이라는 것을 몸으로 알게 해주었습니다. 이후 어떤 매체를 다루든 본질을 놓치지 않으려고 노력하며 회화적인 감각과 디자인적 감각을 결합하는 저의 정체성을 작업 속에서 온전히 드러낼 수 있도록 노력해왔습니다.",
-    "그렇게 책이 되고 앨범이 되고 포스터가 되었을 때 저는 작품이 액자 안에 머물러 있을 때는 느끼지 못했던 감각을 경험하며 타인에게 닿는다는 걸 처음 실감하였고, 저는 그 소통을 계속 만들어 나가고 싶습니다. 제 작업 안에는 늘 타인에게 전달하고 싶은 메시지가 가득했기에 음악과 같이 다른 예술 영역과의 결합을 통해서도 세상과 소통하고 싶은 열망도 커졌습니다.",
-    "저는 디자인이 창작자의 주관적인 사유를 대중이 이해할 수 있는 형태와 구조로 풀어내는 강력한 도구라고 생각합니다. 지금까지는 감각과 직관을 바탕으로 작업해 왔다면 앞으로는 무언가를 끝까지 붙잡는 집요함과 끈기라는 제 장점을 활용해 저의 작업을 한 걸음 뒤에서 바라보는 디자인적 사고를 통해 더 탄탄한 논리와 체계 위에서 다루고 싶습니다. 나아가 인쇄물이라는 익숙한 형태에 머물지 않고 회화적인 감성과 디자인적인 사고를 바탕으로 다양한 매체 위에서도 온전히 다룰 수 있는 디자이너로 성장할 것입니다."
+    "언어로는 다다르지 못하는 지점을 메우기 위해 이미지로 옮겨왔고, 그 과정에서 디자인이 ‘나의 언어’를 ‘모두의 언어’로 정제하는 일임을 배웠습니다. 제가 하고 싶은 표현과 읽는 사람이 받아들여야 하는 지점 사이에서 균형을 찾는 일 — 디자인을 공부하며 제가 배운 건 결국 작품과 사람 사이의 거리를 좁히는 방법이었습니다.",
+    "판화를 배우며 재료와 형상이 직접 부딪쳐 만들어지는 반응을 다뤄본 경험은, 창작이 가벼운 과정이 아니라는 것을 몸으로 알게 해주었습니다. 한 장을 찍기까지 들어가는 수많은 시간과 정성을 알기에 저는 작업의 깊숙한 곳까지 들어가는 일을 두려워하지 않습니다. 그리고 그 몰입을 개인 작업에만 쓰지 않습니다. 리서치를 수행하고, 지면 레이아웃을 짜고, 원고를 교정하고, 마감 일정을 지키는 실무적인 과정에도 동일한 깊이로 들어갑니다. 저에게 둘은 결코 다른 종류의 일이 아닙니다.",
+    "그렇게 만들어진 디자인이 책이 되고, 앨범이 되고, 포스터가 되어 세상에 나왔을 때, 작품이 액자 안에만 머물러 있을 때는 느끼지 못했던 감각을 경험했습니다. 바로 타인에게 닿아 소통한다는 감각입니다. 제가 디자인을 계속하는 이유도 여기에 있습니다.",
+    "개인의 감각과 집요함이 타인과의 협업, 그리고 조직의 구체적인 구조를 만날 때 디자인은 더 멀리 닿는다고 믿습니다. 혼자의 작업실을 벗어나, 다채로운 스펙트럼을 가진 팀원들 사이에서 서로의 논리를 지지하며 함께 성장하고 싶습니다."
+  ],
+
+  aboutEn: [
+    "I began moving things into images to fill the places language could not reach, and somewhere in that I learned what design actually is: the work of refining my own language into one other people can read. Finding the balance between what I want to say and what a reader has to be able to receive — what studying design really taught me was how to close the distance between a piece of work and the person standing in front of it.",
+    "Printmaking taught me, physically, that making is not a light process. You are handling a reaction that only happens when material and form strike each other directly. Because I know how many hours go into a single pull, I am not afraid of going all the way into a piece of work. And I do not save that focus for my own work. Running the research, laying out a spread, proofreading copy, holding a deadline — I go in at the same depth. To me these have never been two different kinds of work.",
+    "When that work left as a book, as an album, as a poster, I felt something I had never felt while it stayed inside a frame: the sense of reaching someone, and being answered. That is why I keep designing.",
+    "I believe design reaches further when one person\u2019s instinct and persistence meet other people\u2019s work and the real structure of an organization behind it. I want to step out of the studio where I work alone and grow alongside teammates who come from a wide range of places, each of us standing behind the other\u2019s reasoning."
   ],
 
   /* 이력 — 섹션별 [연도, 내용(한글), 내용(영문)] */
