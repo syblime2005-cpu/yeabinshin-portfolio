@@ -43,7 +43,8 @@ window.SITE = {
     {
       heading: { ko: "학력", en: "Education" },
       items: [
-        ["2026", "홍익대학교 판화과 · 시각디자인과 전공", "Printmaking · Visual Communication Design, Hongik University"]
+        ["2026", "홍익대학교 판화과 · 시각디자인과 전공", "Printmaking · Visual Communication Design, Hongik University"],
+        ["2026", "UCLA Extension · 가을 쿼터", "UCLA Extension — Fall Quarter"]
       ]
     },
     {
