@@ -1,5 +1,6 @@
 .DS_Store
 .claude/
+.deploy-check
 .vercel
 _미리보기/
 dist/
