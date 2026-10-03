@@ -491,3 +491,21 @@ h1,h2,h3{font-weight:400;margin:0}
 
 /* 영문 모드에서는 내비게이션의 한글 라벨을 숨긴다 */
 html[lang="en"] .nav a[data-nav] i{display:none}
+
+/* ---------- 홈: 화면을 꽉 채우는 표지 ---------- */
+.cover{
+  position:relative;
+  /* .main 의 좌측 여백(--side)과 안쪽 여백(--pad)을 되돌려 화면 왼쪽 끝에서 시작 */
+  margin:calc(var(--pad)*-1) 0 0 calc((var(--side) + var(--pad)) * -1);
+  width:100vw;max-width:100vw;
+  aspect-ratio:16/9;max-height:100svh;
+  overflow:hidden;background:#cacbce;   /* 표지 가장자리 색 — 레터박스가 안 보이게 */
+}
+/* 표지는 16:9 로 짜인 한 장이라 잘라내지 않고 통째로 보여준다 */
+.cover img{width:100%;height:100%;object-fit:contain;display:block}
+body{overflow-x:clip}
+
+/* 모바일에서는 .main 이 margin-left:0 / padding:64px 24px 로 바뀐다 */
+@media (max-width:900px){
+  .cover{margin:-64px 0 0 -24px;width:100vw}
+}

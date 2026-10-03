@@ -126,22 +126,10 @@
   var stageTimer = null;
 
   function viewHome() {
-    var picks = COLLAGE.map(find).filter(Boolean);
     var words = ["감정의 흔적", "printmaking", "언어 너머", "editorial", "잔류", "graphic design",
                  "손의 궤적", "artist book", "아카이브"];
     return '<div class="page">' +
-      '<section class="collage" id="collage"><div class="cl-stage" id="clStage">' +
-      picks.map(function (w, i) {
-        return '<a class="cl-fig cl-' + (i + 1) + '" href="/work/' + w.slug + '" data-link data-d="' + DEPTH[i] + '">' +
-          '<img src="' + img(w, w.cover || w.images[0]) + '" alt="' + esc(L(w.title)) + '" ' + (i > 1 ? 'loading="lazy"' : '') + '>' +
-          '<span class="cl-cap">' + esc(L(w.title)) + ' — ' + esc(w.year) + '</span></a>';
-      }).join("") + '</div>' +
-      '<div class="cl-meta">' +
-      '<h1 class="cl-name">' + esc(S.name.en.toLowerCase()) + (lang === "en" ? "" : '<small>' + esc(S.name.ko) + '</small>') + '</h1>' +
-      '<p class="cl-idx">' + WORKS_().length + ' works<br>' + S.categories.length + ' categories</p>' +
-      '<p class="cl-motto">' + esc(L(S.motto)) + '</p>' +
-      '<p class="cl-role">' + esc(L(S.role)) + '</p>' +
-      '</div></section>' +
+      '<section class="cover"><img src="' + resolve("/images/site/cover.jpg") + '" alt="' + esc(L(S.name)) + '"></section>' +
 
       '<div class="marquee"><div>' +
       [0, 1].map(function () {
