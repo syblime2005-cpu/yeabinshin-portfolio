@@ -102,6 +102,8 @@
     stageTimer = null;
     main.innerHTML = html;
     markNav(seg[0] || "home", seg[1] || "");
+    /* 첫 화면은 표지 안에 이름이 들어 있어 사이드바 로고를 숨긴다 */
+    document.documentElement.classList.toggle("is-home", p === "/");
     reveal();
     if (p === "/") startStage();
     if (seg[0] === "admin" && window.Admin) window.Admin.bind();

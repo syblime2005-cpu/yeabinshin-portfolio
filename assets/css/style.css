@@ -509,3 +509,7 @@ body{overflow-x:clip}
 @media (max-width:900px){
   .cover{margin:-64px 0 0 -24px;width:100vw}
 }
+
+/* 첫 화면에서는 표지가 이름을 이미 갖고 있으므로 사이드바 로고를 숨긴다 */
+html.is-home .brand{visibility:hidden}
+@media (max-width:900px){ html.is-home .brand{visibility:visible} }
