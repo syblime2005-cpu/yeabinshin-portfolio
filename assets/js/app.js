@@ -128,8 +128,11 @@
   var stageTimer = null;
 
   function viewHome() {
-    var words = ["감정의 흔적", "printmaking", "언어 너머", "editorial", "잔류", "graphic design",
-                 "손의 궤적", "artist book", "아카이브"];
+    var words = lang === "en"
+      ? ["remains of emotions", "printmaking", "beyond language", "editorial", "residue",
+         "graphic design", "trajectory of the hand", "artist book", "archive"]
+      : ["감정의 흔적", "printmaking", "언어 너머", "editorial", "잔류", "graphic design",
+         "손의 궤적", "artist book", "아카이브"];
     return '<div class="page">' +
       '<section class="cover"><img src="' + resolve("/images/site/cover.jpg") + '" alt="' + esc(L(S.name)) + '"></section>' +
 

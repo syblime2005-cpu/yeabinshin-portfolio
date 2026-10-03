@@ -490,7 +490,8 @@ h1,h2,h3{font-weight:400;margin:0}
 @media(max-width:700px){ .vid video{max-width:100%} }
 
 /* 영문 모드에서는 내비게이션의 한글 라벨을 숨긴다 */
-html[lang="en"] .nav a[data-nav] i{display:none}
+html[lang="en"] .nav a[data-nav] i,
+html[lang="en"] .brand-ko{display:none}
 
 /* ---------- 홈: 화면을 꽉 채우는 표지 ---------- */
 .cover{
